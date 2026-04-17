@@ -1,0 +1,32 @@
+{
+  "negocio": {
+    "nombre": "Tacul Indumentaria",
+    "direccion": "Moreno 546 L.2",
+    "telefono": "",
+    "email": "",
+    "recargo_tarjeta": 0.15
+  },
+  "productos": [
+    { "codigo": "UE-001", "descripcion": "Guardapolvo blanco manga larga", "categoria": "Uniformes Escolares", "talles": ["4","6","8","10","12","14"], "colores": ["Blanco"], "unidad": "Un", "precio_efectivo": 2800 },
+    { "codigo": "UE-002", "descripcion": "Guardapolvo cuadrillé rosa", "categoria": "Uniformes Escolares", "talles": ["4","6","8","10","12","14"], "colores": ["Rosa"], "unidad": "Un", "precio_efectivo": 3100 },
+    { "codigo": "UE-003", "descripcion": "Pantalón escolar gabardina", "categoria": "Uniformes Escolares", "talles": ["4","6","8","10","12","14"], "colores": ["Gris"], "unidad": "Un", "precio_efectivo": 2400 },
+    { "codigo": "UE-004", "descripcion": "Chomba piqué escolar lisa", "categoria": "Uniformes Escolares", "talles": ["4","6","8","10","12","14"], "colores": ["Blanco","Celeste","Rojo","Verde"], "unidad": "Un", "precio_efectivo": 1800 },
+    { "codigo": "UE-005", "descripcion": "Chomba piqué escolar con bordado", "categoria": "Uniformes Escolares", "talles": ["4","6","8","10","12","14"], "colores": ["Blanco","Celeste","Rojo","Verde"], "unidad": "Un", "precio_efectivo": 2400 },
+    { "codigo": "UE-006", "descripcion": "Conjunto deportivo escolar", "categoria": "Uniformes Escolares", "talles": ["4","6","8","10","12","14"], "colores": ["Varios"], "unidad": "Un", "precio_efectivo": 3900 },
+    { "codigo": "UE-007", "descripcion": "Delantal jardinero", "categoria": "Uniformes Escolares", "talles": ["2","4","6"], "colores": ["Varios"], "unidad": "Un", "precio_efectivo": 2600 },
+    { "codigo": "GA-001", "descripcion": "Chaqueta de cocina manga larga", "categoria": "Gastronomía / Hotelería", "talles": ["XS","S","M","L","XL","XXL"], "colores": ["Blanco"], "unidad": "Un", "precio_efectivo": 4500 },
+    { "codigo": "GA-002", "descripcion": "Pantalón de cocina con elástico", "categoria": "Gastronomía / Hotelería", "talles": ["XS","S","M","L","XL","XXL"], "colores": ["Blanco","Negro"], "unidad": "Un", "precio_efectivo": 3200 },
+    { "codigo": "GA-003", "descripcion": "Delantal largo con peto", "categoria": "Gastronomía / Hotelería", "talles": ["Único"], "colores": ["Negro"], "unidad": "Un", "precio_efectivo": 2800 },
+    { "codigo": "GA-004", "descripcion": "Cofia descartable x 100 u", "categoria": "Gastronomía / Hotelería", "talles": ["Único"], "colores": ["Blanco"], "unidad": "Paq", "precio_efectivo": 1400 },
+    { "codigo": "GA-005", "descripcion": "Camisa de mozo manga larga", "categoria": "Gastronomía / Hotelería", "talles": ["S","M","L","XL","XXL"], "colores": ["Blanco"], "unidad": "Un", "precio_efectivo": 3600 },
+    { "codigo": "GA-006", "descripcion": "Chaleco de sommelier", "categoria": "Gastronomía / Hotelería", "talles": ["S","M","L","XL"], "colores": ["Negro"], "unidad": "Un", "precio_efectivo": 4200 },
+    { "codigo": "HO-001", "descripcion": "Camisa de mucama manga corta", "categoria": "Gastronomía / Hotelería", "talles": ["S","M","L","XL"], "colores": ["Celeste"], "unidad": "Un", "precio_efectivo": 3100 },
+    { "codigo": "HO-002", "descripcion": "Delantal hotelero bordado", "categoria": "Gastronomía / Hotelería", "talles": ["Único"], "colores": ["Blanco"], "unidad": "Un", "precio_efectivo": 2200 },
+    { "codigo": "MN-001", "descripcion": "Mameluco de trabajo", "categoria": "Mantenimiento", "talles": ["S","M","L","XL","XXL","XXXL"], "colores": ["Azul"], "unidad": "Un", "precio_efectivo": 5800 },
+    { "codigo": "MN-002", "descripcion": "Camisa trabajo manga larga", "categoria": "Mantenimiento", "talles": ["S","M","L","XL","XXL","XXXL"], "colores": ["Varios"], "unidad": "Un", "precio_efectivo": 3400 },
+    { "codigo": "MN-003", "descripcion": "Pantalón cargo reforzado", "categoria": "Mantenimiento", "talles": ["S","M","L","XL","XXL","XXXL"], "colores": ["Azul","Gris"], "unidad": "Un", "precio_efectivo": 4100 },
+    { "codigo": "MN-004", "descripcion": "Campera de abrigo trabajo", "categoria": "Mantenimiento", "talles": ["S","M","L","XL","XXL","XXXL"], "colores": ["Azul"], "unidad": "Un", "precio_efectivo": 7200 },
+    { "codigo": "MN-005", "descripcion": "Chaleco reflectante", "categoria": "Mantenimiento", "talles": ["Único"], "colores": ["Naranja"], "unidad": "Un", "precio_efectivo": 1900 },
+    { "codigo": "MN-006", "descripcion": "Conjunto impermeable", "categoria": "Mantenimiento", "talles": ["S","M","L","XL","XXL","XXXL"], "colores": ["Amarillo"], "unidad": "Un", "precio_efectivo": 6500 }
+  ]
+}
