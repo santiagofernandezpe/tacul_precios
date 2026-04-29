@@ -1,10 +1,7 @@
-const CACHE = 'tacul-v1';
-const ARCHIVOS = ['/', '/index.html', '/precios.json', '/manifest.json'];
+const CACHE = 'tacul-v2';
 
 self.addEventListener('install', e => {
-  e.waitUntil(
-    caches.open(CACHE).then(c => c.addAll(ARCHIVOS)).then(() => self.skipWaiting())
-  );
+  self.skipWaiting();
 });
 
 self.addEventListener('activate', e => {
@@ -17,15 +14,14 @@ self.addEventListener('activate', e => {
 
 self.addEventListener('fetch', e => {
   e.respondWith(
-    caches.match(e.request).then(cached => {
-      const networkFetch = fetch(e.request).then(res => {
+    fetch(e.request)
+      .then(res => {
         if (res && res.status === 200) {
           const copia = res.clone();
-          caches.open(CACHE).then(c => c.put(e.request, copia));
+          caches.open(CACHE).then(c => c.put(e.request, copia)).catch(() => {});
         }
         return res;
-      }).catch(() => cached);
-      return cached || networkFetch;
-    })
+      })
+      .catch(() => caches.match(e.request))
   );
 });
