@@ -18,8 +18,6 @@
 }
 *{box-sizing:border-box;margin:0;padding:0}
 body{font-family:'DM Sans',sans-serif;background:var(--bg);color:var(--gris-osc);min-height:100vh}
-
-/* LAYOUT CON PANEL */
 .app-wrap{display:flex;min-height:100vh}
 .main-col{flex:1;min-width:0;transition:margin-right .3s}
 .main-col.panel-open{margin-right:var(--panel-w)}
@@ -30,12 +28,9 @@ header{background:var(--azul-osc);position:sticky;top:0;z-index:100;box-shadow:0
 .logo-svg{height:40px;width:auto}
 .header-right{display:flex;align-items:center;gap:10px}
 .header-dir{font-size:.65rem;color:rgba(255,255,255,.4);letter-spacing:.08em}
-.header-badge{background:var(--azul);color:white;font-size:.66rem;font-weight:600;letter-spacing:.07em;text-transform:uppercase;padding:3px 9px;border-radius:20px;white-space:nowrap}
-
-/* BOTÓN CARRITO EN HEADER */
 .btn-carrito-header{background:rgba(255,255,255,.1);border:1.5px solid rgba(255,255,255,.25);border-radius:8px;color:white;font-family:'DM Sans',sans-serif;font-size:.82rem;font-weight:600;padding:6px 12px;cursor:pointer;display:flex;align-items:center;gap:6px;transition:all .2s;white-space:nowrap}
 .btn-carrito-header:hover{background:rgba(255,255,255,.2)}
-.carrito-badge{background:var(--azul);color:white;border-radius:50%;width:18px;height:18px;font-size:.65rem;font-weight:700;display:inline-flex;align-items:center;justify-content:center;display:none}
+.carrito-badge{background:var(--azul);color:white;border-radius:50%;width:18px;height:18px;font-size:.65rem;font-weight:700;display:none;align-items:center;justify-content:center}
 .carrito-badge.visible{display:inline-flex}
 
 /* SEARCH */
@@ -46,17 +41,16 @@ header{background:var(--azul-osc);position:sticky;top:0;z-index:100;box-shadow:0
 .search-input{width:100%;background:rgba(255,255,255,.1);border:1.5px solid rgba(255,255,255,.2);border-radius:8px;padding:8px 34px 8px 12px;color:white;font-family:'DM Sans',sans-serif;font-size:.92rem;outline:none;transition:all .2s}
 .search-input::placeholder{color:rgba(255,255,255,.3)}
 .search-input:focus{background:rgba(255,255,255,.15);border-color:var(--azul);box-shadow:0 0 0 3px rgba(28,0,255,.25)}
-.btn-reset{position:absolute;right:8px;top:50%;transform:translateY(-50%);background:rgba(255,255,255,.15);border:none;color:rgba(255,255,255,.8);font-size:.72rem;cursor:pointer;padding:2px 5px;border-radius:4px;line-height:1;display:none;transition:all .15s}
-.btn-reset:hover{background:rgba(255,255,255,.28)}
+.btn-reset{position:absolute;right:8px;top:50%;transform:translateY(-50%);background:rgba(255,255,255,.15);border:none;color:rgba(255,255,255,.8);font-size:.72rem;cursor:pointer;padding:2px 5px;border-radius:4px;line-height:1;display:none}
 .btn-reset.visible{display:block}
-.talle-select{width:100%;background:rgba(255,255,255,.1);border:1.5px solid rgba(255,255,255,.2);border-radius:8px;padding:8px 26px 8px 10px;color:white;font-family:'DM Sans',sans-serif;font-size:.82rem;outline:none;cursor:pointer;appearance:none;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='7' viewBox='0 0 10 7'%3E%3Cpath d='M1 1l4 4 4-4' stroke='rgba(255,255,255,0.5)' stroke-width='1.5' fill='none' stroke-linecap='round'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 9px center;transition:border-color .2s}
+.talle-select{width:100%;background:rgba(255,255,255,.1);border:1.5px solid rgba(255,255,255,.2);border-radius:8px;padding:8px 26px 8px 10px;color:white;font-family:'DM Sans',sans-serif;font-size:.82rem;outline:none;cursor:pointer;appearance:none;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='7' viewBox='0 0 10 7'%3E%3Cpath d='M1 1l4 4 4-4' stroke='rgba(255,255,255,0.5)' stroke-width='1.5' fill='none' stroke-linecap='round'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 9px center}
 .talle-select option{background:var(--azul-osc);color:white}
 .talle-select:focus{border-color:var(--azul)}
 
 /* AUTOCOMPLETE */
 .autocomplete-dropdown{position:absolute;top:calc(100% + 4px);left:0;right:0;background:var(--blanco);border:1.5px solid var(--borde);border-radius:10px;box-shadow:var(--sombra-card);z-index:200;max-height:240px;overflow-y:auto;display:none}
 .autocomplete-dropdown.visible{display:block}
-.ac-item{padding:8px 12px;cursor:pointer;display:flex;align-items:center;gap:9px;border-bottom:1px solid var(--azul-hover);transition:background .12s}
+.ac-item{padding:8px 12px;cursor:pointer;display:flex;align-items:center;gap:9px;border-bottom:1px solid var(--azul-hover)}
 .ac-item:last-child{border-bottom:none}
 .ac-item:hover,.ac-item.selected{background:var(--azul-hover)}
 .ac-codigo{font-size:.7rem;font-weight:700;color:var(--azul);background:var(--azul-clar);padding:2px 6px;border-radius:4px;white-space:nowrap}
@@ -79,10 +73,10 @@ main{max-width:1100px;margin:0 auto;padding:14px 20px 60px}
 table{width:100%;border-collapse:collapse}
 thead th{background:var(--azul-osc);color:white;font-size:.66rem;font-weight:600;letter-spacing:.08em;text-transform:uppercase;padding:11px 12px;text-align:left;white-space:nowrap}
 thead th:nth-child(5),thead th:nth-child(6){text-align:right}
-tbody tr{border-bottom:1px solid var(--azul-hover);transition:background .12s}
+tbody tr{border-bottom:1px solid var(--azul-hover)}
 tbody tr:last-child{border-bottom:none}
 tbody tr:hover{background:var(--azul-hover)}
-tbody td{padding:9px 12px;font-size:.82rem;vertical-align:middle;color:var(--gris-osc)}
+tbody td{padding:9px 12px;font-size:.82rem;vertical-align:middle}
 .td-codigo{font-size:.72rem;font-weight:700;color:var(--azul);white-space:nowrap}
 .td-desc{font-weight:500;color:var(--azul-osc)}
 .td-cat{font-size:.68rem;color:var(--gris-med)}
@@ -92,95 +86,86 @@ tbody td{padding:9px 12px;font-size:.82rem;vertical-align:middle;color:var(--gri
 .precio-efectivo{font-size:.9rem;font-weight:700;color:var(--azul-osc)}
 .precio-lista{font-size:.9rem;font-weight:700;color:var(--rojo)}
 .precio-label{font-size:.58rem;font-weight:500;letter-spacing:.06em;text-transform:uppercase;color:var(--gris-med);display:block;margin-bottom:1px}
-
-/* BOTÓN AGREGAR */
 .btn-agregar{background:var(--azul);color:white;border:none;border-radius:6px;padding:5px 10px;font-family:'DM Sans',sans-serif;font-size:.72rem;font-weight:600;cursor:pointer;transition:all .15s;white-space:nowrap}
 .btn-agregar:hover{background:var(--azul-med);transform:scale(1.04)}
-.btn-agregar:active{transform:scale(.97)}
-.btn-agregar.agregado{background:var(--verde-ok)}
-
 .empty-state{text-align:center;padding:50px 24px;color:var(--gris-med)}
 .leyenda{display:flex;gap:16px;margin-top:10px;flex-wrap:wrap;align-items:center}
 .leyenda-item{display:flex;align-items:center;gap:6px;font-size:.73rem;color:var(--gris-med)}
 .leyenda-dot{width:8px;height:8px;border-radius:50%}
 
-/* ══ PANEL LATERAL CARRITO ══ */
+/* PANEL */
 .panel{position:fixed;top:0;right:0;width:var(--panel-w);height:100vh;background:var(--blanco);border-left:1px solid var(--borde);box-shadow:-4px 0 24px rgba(28,0,255,.1);z-index:300;display:flex;flex-direction:column;transform:translateX(100%);transition:transform .3s}
 .panel.open{transform:translateX(0)}
-
 .panel-header{background:var(--azul-osc);padding:14px 16px;display:flex;flex-direction:column;gap:10px}
 .panel-header-top{display:flex;align-items:center;justify-content:space-between}
 .panel-title{color:white;font-size:.95rem;font-weight:600}
-.btn-cerrar-panel{background:none;border:none;color:rgba(255,255,255,.6);font-size:1.2rem;cursor:pointer;padding:2px 6px;border-radius:4px;transition:color .15s}
+.btn-cerrar-panel{background:none;border:none;color:rgba(255,255,255,.6);font-size:1.2rem;cursor:pointer;padding:2px 6px;border-radius:4px}
 .btn-cerrar-panel:hover{color:white}
-
-/* Tabs de clientes */
 .clientes-tabs{display:flex;gap:4px;flex-wrap:wrap;align-items:center}
 .tab-cliente{background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.2);border-radius:6px;color:rgba(255,255,255,.75);font-family:'DM Sans',sans-serif;font-size:.72rem;font-weight:500;padding:4px 10px;cursor:pointer;transition:all .15s;display:flex;align-items:center;gap:5px}
-.tab-cliente:hover{background:rgba(255,255,255,.2)}
 .tab-cliente.active{background:var(--azul);border-color:var(--azul);color:white;font-weight:600}
-.tab-cliente .tab-close{opacity:.6;font-size:.65rem;margin-left:2px}
-.tab-cliente .tab-close:hover{opacity:1}
-.btn-nuevo-cliente{background:rgba(255,255,255,.08);border:1px dashed rgba(255,255,255,.3);border-radius:6px;color:rgba(255,255,255,.6);font-family:'DM Sans',sans-serif;font-size:.72rem;padding:4px 9px;cursor:pointer;transition:all .15s}
+.tab-close{opacity:.6;font-size:.65rem;margin-left:2px}
+.tab-close:hover{opacity:1}
+.btn-nuevo-cliente{background:rgba(255,255,255,.08);border:1px dashed rgba(255,255,255,.3);border-radius:6px;color:rgba(255,255,255,.6);font-family:'DM Sans',sans-serif;font-size:.72rem;padding:4px 9px;cursor:pointer}
 .btn-nuevo-cliente:hover{background:rgba(255,255,255,.15);color:white}
-
-/* Contenido del panel */
 .panel-body{flex:1;overflow-y:auto;padding:14px}
 .panel-empty{text-align:center;padding:40px 16px;color:var(--gris-med);font-size:.85rem}
-
-/* Items del carrito */
 .carrito-item{display:flex;align-items:flex-start;gap:10px;padding:10px 0;border-bottom:1px solid var(--azul-hover)}
 .carrito-item:last-child{border-bottom:none}
 .item-info{flex:1;min-width:0}
 .item-desc{font-size:.82rem;font-weight:500;color:var(--azul-osc);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
 .item-meta{font-size:.7rem;color:var(--gris-med);margin-top:2px}
+.item-tg{font-size:.67rem;background:#fff3cd;color:#7a5c00;border-radius:3px;padding:1px 5px;margin-left:4px;font-weight:600}
 .item-precio{font-size:.85rem;font-weight:700;color:var(--azul-osc);white-space:nowrap;text-align:right}
 .item-controls{display:flex;align-items:center;gap:5px;margin-top:5px}
-.cant-btn{background:var(--azul-clar);border:none;border-radius:4px;width:22px;height:22px;font-size:.9rem;cursor:pointer;display:flex;align-items:center;justify-content:center;color:var(--azul-med);font-weight:700;transition:background .12s}
+.cant-btn{background:var(--azul-clar);border:none;border-radius:4px;width:22px;height:22px;font-size:.9rem;cursor:pointer;display:flex;align-items:center;justify-content:center;color:var(--azul-med);font-weight:700}
 .cant-btn:hover{background:var(--azul);color:white}
-.cant-num{font-size:.82rem;font-weight:600;min-width:22px;text-align:center;color:var(--azul-osc)}
-.btn-quitar{background:none;border:none;color:var(--gris-med);font-size:.8rem;cursor:pointer;padding:2px 5px;border-radius:4px;margin-left:auto;transition:color .12s}
+.cant-num{font-size:.82rem;font-weight:600;min-width:22px;text-align:center}
+.btn-quitar{background:none;border:none;color:var(--gris-med);font-size:.8rem;cursor:pointer;padding:2px 5px;border-radius:4px;margin-left:auto}
 .btn-quitar:hover{color:var(--rojo)}
-
-/* Panel footer */
 .panel-footer{border-top:1px solid var(--borde);padding:14px}
 .precio-tipo{display:flex;gap:8px;margin-bottom:12px}
 .precio-tipo label{flex:1;display:flex;align-items:center;justify-content:center;gap:5px;border:1.5px solid var(--borde);border-radius:8px;padding:7px;cursor:pointer;font-size:.78rem;font-weight:500;color:var(--gris-med);transition:all .15s}
 .precio-tipo input[type=radio]{display:none}
-.precio-tipo input[type=radio]:checked + span{font-weight:700}
-.precio-tipo label:has(input:checked){border-color:var(--azul);background:var(--azul-clar);color:var(--azul-osc)}
+.precio-tipo label:has(input:checked){border-color:var(--azul);background:var(--azul-clar);color:var(--azul-osc);font-weight:600}
 .panel-total{display:flex;justify-content:space-between;align-items:baseline;margin-bottom:12px}
 .panel-total-label{font-size:.78rem;color:var(--gris-med)}
 .panel-total-num{font-size:1.3rem;font-weight:700;color:var(--azul-osc)}
 .panel-total-num.lista{color:var(--rojo)}
 .panel-btns{display:flex;gap:8px}
-.btn-imprimir{flex:1;background:var(--azul-osc);color:white;border:none;border-radius:8px;padding:9px;font-family:'DM Sans',sans-serif;font-size:.8rem;font-weight:600;cursor:pointer;transition:background .15s}
+.btn-imprimir{flex:1;background:var(--azul-osc);color:white;border:none;border-radius:8px;padding:9px;font-family:'DM Sans',sans-serif;font-size:.8rem;font-weight:600;cursor:pointer}
 .btn-imprimir:hover{background:var(--azul-med)}
-.btn-limpiar{background:var(--gris-clar);color:var(--gris-osc);border:none;border-radius:8px;padding:9px 14px;font-family:'DM Sans',sans-serif;font-size:.8rem;font-weight:500;cursor:pointer;transition:background .15s}
-.btn-limpiar:hover{background:var(--borde)}
+.btn-limpiar{background:var(--gris-clar);color:var(--gris-osc);border:none;border-radius:8px;padding:9px 14px;font-family:'DM Sans',sans-serif;font-size:.8rem;cursor:pointer}
 
-/* MODAL AGREGAR */
+/* MODAL */
 .modal-overlay{position:fixed;inset:0;background:rgba(10,10,46,.5);z-index:400;display:none;align-items:center;justify-content:center}
 .modal-overlay.visible{display:flex}
-.modal{background:var(--blanco);border-radius:14px;padding:22px;width:340px;max-width:95vw;box-shadow:0 8px 40px rgba(28,0,255,.15)}
+.modal{background:var(--blanco);border-radius:14px;padding:22px;width:360px;max-width:95vw;box-shadow:0 8px 40px rgba(28,0,255,.15)}
 .modal h3{font-size:1rem;font-weight:600;color:var(--azul-osc);margin-bottom:14px}
-.modal-prod{font-size:.85rem;color:var(--gris-osc);background:var(--azul-clar);border-radius:8px;padding:10px 12px;margin-bottom:14px;line-height:1.5}
-.modal-prod strong{color:var(--azul-osc);display:block;margin-bottom:3px}
-.modal label{font-size:.75rem;font-weight:600;color:var(--gris-med);letter-spacing:.06em;text-transform:uppercase;display:block;margin-bottom:5px}
-.modal select,.modal input[type=text],.modal input[type=number]{width:100%;border:1.5px solid var(--borde);border-radius:8px;padding:8px 11px;font-family:'DM Sans',sans-serif;font-size:.88rem;color:var(--gris-osc);outline:none;margin-bottom:12px;transition:border-color .15s}
+.modal-prod{background:var(--azul-clar);border-radius:8px;padding:11px 13px;margin-bottom:14px;line-height:1.6;font-size:.85rem}
+.modal-prod strong{color:var(--azul-osc);display:block;font-size:.92rem;margin-bottom:4px}
+.modal-precios{display:flex;gap:16px;margin-top:6px}
+.modal-precio-item{font-size:.8rem}
+.modal-precio-item span{display:block;font-size:.6rem;text-transform:uppercase;letter-spacing:.06em;color:var(--gris-med);margin-bottom:1px}
+.modal-precio-item strong{font-size:.95rem}
+.modal-precio-item.efectivo strong{color:var(--azul-osc)}
+.modal-precio-item.lista strong{color:var(--rojo)}
+.modal label.field-label{font-size:.72rem;font-weight:600;color:var(--gris-med);letter-spacing:.06em;text-transform:uppercase;display:block;margin-bottom:5px;margin-top:12px}
+.modal select,.modal input[type=number]{width:100%;border:1.5px solid var(--borde);border-radius:8px;padding:8px 11px;font-family:'DM Sans',sans-serif;font-size:.88rem;color:var(--gris-osc);outline:none;transition:border-color .15s}
 .modal select:focus,.modal input:focus{border-color:var(--azul)}
-.modal-btns{display:flex;gap:8px;margin-top:4px}
-.btn-modal-ok{flex:1;background:var(--azul);color:white;border:none;border-radius:8px;padding:9px;font-family:'DM Sans',sans-serif;font-size:.85rem;font-weight:600;cursor:pointer;transition:background .15s}
+
+/* CHECKBOX TALLE GRANDE */
+.tg-box{display:flex;align-items:center;gap:9px;background:#fffbea;border:1.5px solid #e8d44d;border-radius:8px;padding:10px 12px;margin-top:12px;cursor:pointer;transition:background .15s}
+.tg-box:hover{background:#fff8d6}
+.tg-box input[type=checkbox]{width:16px;height:16px;accent-color:var(--azul);cursor:pointer;flex-shrink:0}
+.tg-box-text{flex:1}
+.tg-box-label{font-size:.82rem;font-weight:600;color:#5a4a00}
+.tg-box-sub{font-size:.72rem;color:#7a6a20;margin-top:1px}
+
+.modal-btns{display:flex;gap:8px;margin-top:16px}
+.btn-modal-ok{flex:1;background:var(--azul);color:white;border:none;border-radius:8px;padding:9px;font-family:'DM Sans',sans-serif;font-size:.85rem;font-weight:600;cursor:pointer}
 .btn-modal-ok:hover{background:var(--azul-med)}
 .btn-modal-cancel{background:var(--gris-clar);color:var(--gris-osc);border:none;border-radius:8px;padding:9px 14px;font-family:'DM Sans',sans-serif;font-size:.85rem;cursor:pointer}
-
-/* PRINT */
-@media print {
-  header,.search-bar,.panel,.btn-agregar,.modal-overlay,main .stats-bar,.leyenda{display:none!important}
-  .print-area{display:block!important}
-  body{background:white}
-}
-.print-area{display:none}
 
 @media(max-width:640px){
   :root{--panel-w:100vw}
@@ -210,7 +195,7 @@ tbody td{padding:9px 12px;font-size:.82rem;vertical-align:middle;color:var(--gri
     </svg>
     <div class="header-right">
       <span class="header-dir">Moreno 546 L.2</span>
-      <button class="btn-carrito-header" id="btn-abrir-panel" onclick="togglePanel()">
+      <button class="btn-carrito-header" onclick="togglePanel()">
         🛒 Carritos <span class="carrito-badge" id="badge-total">0</span>
       </button>
     </div>
@@ -220,7 +205,7 @@ tbody td{padding:9px 12px;font-size:.82rem;vertical-align:middle;color:var(--gri
       <div class="search-group">
         <label class="search-label" for="buscador">Buscar producto</label>
         <input type="text" id="buscador" class="search-input" placeholder='Ej: "chomba", "201", "guardapolvo"...' autocomplete="off" spellcheck="false">
-        <button class="btn-reset" id="btn-reset" title="Limpiar todo">✕</button>
+        <button class="btn-reset" id="btn-reset">✕</button>
         <div class="autocomplete-dropdown" id="dropdown"></div>
       </div>
       <div>
@@ -244,9 +229,7 @@ tbody td{padding:9px 12px;font-size:.82rem;vertical-align:middle;color:var(--gri
       <thead>
         <tr>
           <th>Código</th><th>Descripción</th><th>Categoría</th>
-          <th>Talle</th><th>Efectivo</th>
-          <th>Lista <span style="opacity:.55;font-weight:400">(+15%)</span></th>
-          <th></th>
+          <th>Talle</th><th>Efectivo</th><th>De lista</th><th></th>
         </tr>
       </thead>
       <tbody id="tabla-body"></tbody>
@@ -258,12 +241,12 @@ tbody td{padding:9px 12px;font-size:.82rem;vertical-align:middle;color:var(--gri
   </div>
   <div class="leyenda">
     <div class="leyenda-item"><div class="leyenda-dot" style="background:var(--azul-osc)"></div><span><strong>Efectivo</strong> — pago en mano</span></div>
-    <div class="leyenda-item"><div class="leyenda-dot" style="background:var(--rojo)"></div><span><strong>Lista</strong> — tarjeta (+15%)</span></div>
+    <div class="leyenda-item"><div class="leyenda-dot" style="background:var(--rojo)"></div><span><strong>De lista</strong></span></div>
   </div>
 </main>
-</div><!-- /main-col -->
+</div>
 
-<!-- PANEL LATERAL -->
+<!-- PANEL -->
 <div class="panel" id="panel">
   <div class="panel-header">
     <div class="panel-header-top">
@@ -280,7 +263,7 @@ tbody td{padding:9px 12px;font-size:.82rem;vertical-align:middle;color:var(--gri
   <div class="panel-footer" id="panel-footer" style="display:none">
     <div class="precio-tipo">
       <label><input type="radio" name="tipo-precio" value="efectivo" checked><span>💵 Efectivo</span></label>
-      <label><input type="radio" name="tipo-precio" value="lista"><span>💳 Lista (+15%)</span></label>
+      <label><input type="radio" name="tipo-precio" value="lista"><span>💳 De lista</span></label>
     </div>
     <div class="panel-total">
       <span class="panel-total-label">Total:</span>
@@ -293,15 +276,27 @@ tbody td{padding:9px 12px;font-size:.82rem;vertical-align:middle;color:var(--gri
   </div>
 </div>
 
-<!-- MODAL AGREGAR AL CARRITO -->
+<!-- MODAL -->
 <div class="modal-overlay" id="modal-overlay">
   <div class="modal">
     <h3>Agregar al carrito</h3>
     <div class="modal-prod" id="modal-prod-info"></div>
-    <label>Cliente</label>
+
+    <label class="field-label">Cliente</label>
     <select id="modal-cliente"></select>
-    <label>Cantidad</label>
+
+    <label class="field-label">Cantidad</label>
     <input type="number" id="modal-cantidad" value="1" min="1" max="999">
+
+    <!-- TALLE GRANDE -->
+    <label class="tg-box" id="tg-box">
+      <input type="checkbox" id="tg-check">
+      <div class="tg-box-text">
+        <div class="tg-box-label">📐 Talle grande (+10%)</div>
+        <div class="tg-box-sub">Aplicar recargo por mayor uso de tela</div>
+      </div>
+    </label>
+
     <div class="modal-btns">
       <button class="btn-modal-cancel" onclick="cerrarModal()">Cancelar</button>
       <button class="btn-modal-ok" onclick="confirmarAgregar()">Agregar ✓</button>
@@ -309,21 +304,15 @@ tbody td{padding:9px 12px;font-size:.82rem;vertical-align:middle;color:var(--gri
   </div>
 </div>
 
-<!-- ÁREA DE IMPRESIÓN -->
-<div class="print-area" id="print-area"></div>
-
 <script>
 const RECARGO = 0.15;
+const RECARGO_TG = 0.10;
 const PRODUCTOS = [{"codigo": "201", "descripcion": "Guardapolvo  Dama/Hombre color c/broches", "categoria": "Guardapolvo Dama / Hombre", "talle": "54", "precio_efectivo": 65000}, {"codigo": "201", "descripcion": "Guardapolvo Dama/Hombre color c/botón", "categoria": "Guardapolvo Dama / Hombre", "talle": "54", "precio_efectivo": 62000}, {"codigo": "201", "descripcion": "Guardapolvo Dama/Hombre blanco c/bches", "categoria": "Guardapolvo Dama / Hombre", "talle": "54", "precio_efectivo": 61000}, {"codigo": "201", "descripcion": "Guardapolvo Dama/Hombre blanco c/botón", "categoria": "Guardapolvo Dama / Hombre", "talle": "54", "precio_efectivo": 60000}, {"codigo": "214", "descripcion": "Guardapolvo mcma color c/delantal y broderi", "categoria": "Guardapolvo Dama / Hombre", "talle": "54", "precio_efectivo": 83000}, {"codigo": "215", "descripcion": "Guardapolvo de mcma color c/combinación bco", "categoria": "Guardapolvo Dama / Hombre", "talle": "54", "precio_efectivo": 79000}, {"codigo": "216", "descripcion": "Guardapolvo de mcma mil rayas c/delantal", "categoria": "Guardapolvo Dama / Hombre", "talle": "54", "precio_efectivo": 76000}, {"codigo": "217", "descripcion": "Guardapolvo de mcma tela escocesa", "categoria": "Guardapolvo Dama / Hombre", "talle": "54", "precio_efectivo": 72000}, {"codigo": "2318", "descripcion": "Chaqueta blanca cuello solapa con broches", "categoria": "Chaquetas Varias De Cocinero", "talle": "54", "precio_efectivo": 53000}, {"codigo": "121", "descripcion": "Chaqueta cocinero gabardina bco cruzada", "categoria": "Chaquetas Varias De Cocinero", "talle": "XL", "precio_efectivo": 58000}, {"codigo": "121/1", "descripcion": "Chaqueta cocinero gabardina negro cruzada", "categoria": "Chaquetas Varias De Cocinero", "talle": "XL", "precio_efectivo": 62000}, {"codigo": "121/2", "descripcion": "Chaqueta cocinero cruzada cruzada color", "categoria": "Chaquetas Varias De Cocinero", "talle": "XL", "precio_efectivo": 68000}, {"codigo": "122", "descripcion": "Chaqueta cocinero Tebrin blanca c/liberty", "categoria": "Chaquetas Varias De Cocinero", "talle": "XL", "precio_efectivo": 64000}, {"codigo": "123", "descripcion": "Chaqueta cruzada de cocinero de Jean M 3/4", "categoria": "Chaquetas Varias De Cocinero", "talle": "XL", "precio_efectivo": 65000}, {"codigo": "237", "descripcion": "Chaqueta dama cocinero c/vivo Lavilisto M 3/4", "categoria": "Chaquetas Varias De Cocinero", "talle": "54", "precio_efectivo": 62000}, {"codigo": "125", "descripcion": "Chaqueta dama Alpacuna blanco c/vivos", "categoria": "Chaquetas Varias De Cocinero", "talle": "XL", "precio_efectivo": 70000}, {"codigo": "126", "descripcion": "Chaqueta de Chef con botón gemelo", "categoria": "Chaquetas Varias De Cocinero", "talle": "XL", "precio_efectivo": 75000}, {"codigo": "124/1", "descripcion": "Chaqueta cocinero blanco Lavilisto", "categoria": "Chaquetas Varias De Cocinero", "talle": "54", "precio_efectivo": 67000}, {"codigo": "124/2", "descripcion": "Chaqueta cocinero negro Lavilisto", "categoria": "Chaquetas Varias De Cocinero", "talle": "54", "precio_efectivo": 70000}, {"codigo": "124/3", "descripcion": "Chaqueta cocinero Alpacuna c/vivos", "categoria": "Chaquetas Varias De Cocinero", "talle": "XL", "precio_efectivo": 75000}, {"codigo": "122/2", "descripcion": "Chaqueta cocinero Tebrin negro  c/liberty", "categoria": "Chaquetas Varias De Cocinero", "talle": "XL", "precio_efectivo": 67000}, {"codigo": "51", "descripcion": "Ambo casaca y pantalón SOFT FLEX", "categoria": "Ambos Y Chaquetas De Dma/Hombre Bco Color", "talle": "XL", "precio_efectivo": 120000}, {"codigo": "49", "descripcion": "Ambo casaca C/V y pantalón ARCIEL color", "categoria": "Ambos Y Chaquetas De Dma/Hombre Bco Color", "talle": "3", "precio_efectivo": 75000}, {"codigo": "49", "descripcion": "Ambo casaca C/V y pantalón ARCIEL blanco", "categoria": "Ambos Y Chaquetas De Dma/Hombre Bco Color", "talle": "3", "precio_efectivo": 70000}, {"codigo": "50", "descripcion": "Ambo casaca C/V y pantalón con SPAM color", "categoria": "Ambos Y Chaquetas De Dma/Hombre Bco Color", "talle": "XL", "precio_efectivo": 90000}, {"codigo": "107/120", "descripcion": "Chaqueta dama/hombre color m/larga c/bches", "categoria": "Ambos Y Chaquetas De Dma/Hombre Bco Color", "talle": "54", "precio_efectivo": 56000}, {"codigo": "107/120", "descripcion": "Chaqueta dama /hombre blanco m/larga c/bches", "categoria": "Ambos Y Chaquetas De Dma/Hombre Bco Color", "talle": "54", "precio_efectivo": 54000}, {"codigo": "107/120", "descripcion": "Chaqueta dama/hombre color m/corta c/bches", "categoria": "Ambos Y Chaquetas De Dma/Hombre Bco Color", "talle": "54", "precio_efectivo": 52000}, {"codigo": "107/120", "descripcion": "Chaqueta dama/hombre blanco m/corta c/bches", "categoria": "Ambos Y Chaquetas De Dma/Hombre Bco Color", "talle": "54", "precio_efectivo": 50000}, {"codigo": "118", "descripcion": "Chaqueta dama blanca JL m/c con vivos", "categoria": "Ambos Y Chaquetas De Dma/Hombre Bco Color", "talle": "XL", "precio_efectivo": 49000}, {"codigo": "394", "descripcion": "Casaca C/V blanco con SPAM c/vivo color", "categoria": "Ambos Y Chaquetas De Dma/Hombre Bco Color", "talle": "XL", "precio_efectivo": 52000}, {"codigo": "395", "descripcion": "Casaca C/V color con SPAM c/vivo color", "categoria": "Ambos Y Chaquetas De Dma/Hombre Bco Color", "talle": "XL", "precio_efectivo": 54000}, {"codigo": "111", "descripcion": "Chaqueta cruzada con vivos color m/corta", "categoria": "Ambos Y Chaquetas De Dma/Hombre Bco Color", "talle": "54", "precio_efectivo": 48000}, {"codigo": "112", "descripcion": "Camisola color manga larga c/puño y broches", "categoria": "Ambos Y Chaquetas De Dma/Hombre Bco Color", "talle": "54", "precio_efectivo": 56000}, {"codigo": "112", "descripcion": "Camisola blanco manga larga c/puño y broches", "categoria": "Ambos Y Chaquetas De Dma/Hombre Bco Color", "talle": "54", "precio_efectivo": 55000}, {"codigo": "112", "descripcion": "Camisola color  manga 3/4 con broches", "categoria": "Ambos Y Chaquetas De Dma/Hombre Bco Color", "talle": "54", "precio_efectivo": 54000}, {"codigo": "112", "descripcion": "Camisola blanco manga 3/4 con broches", "categoria": "Ambos Y Chaquetas De Dma/Hombre Bco Color", "talle": "54", "precio_efectivo": 53000}, {"codigo": "106", "descripcion": "Chaqueta dama m/corta con cierre y vivos", "categoria": "Ambos Y Chaquetas De Dma/Hombre Bco Color", "talle": "54", "precio_efectivo": 56000}, {"codigo": "127", "descripcion": "Casaca C/V blanco Arciel m/corta", "categoria": "Chaquetas De Dama Blanco Y Color", "talle": "3", "precio_efectivo": 37000}, {"codigo": "127", "descripcion": "Casaca C/V color Arciel m/corta", "categoria": "Chaquetas De Dama Blanco Y Color", "talle": "3", "precio_efectivo": 39000}, {"codigo": "287/242", "descripcion": "Chaqueta bco c/broderí larga c/bches", "categoria": "Chaquetas De Dama Blanco Y Color", "talle": "54", "precio_efectivo": 54000}, {"codigo": "2140", "descripcion": "Chaqueta blanca con zigzag vivo y bches", "categoria": "Chaquetas De Dama Blanco Y Color", "talle": "54", "precio_efectivo": 52000}, {"codigo": "2777", "descripcion": "Camisola blanca s/mangas c/broderí", "categoria": "Chaquetas De Dama Blanco Y Color", "talle": "54", "precio_efectivo": 54000}, {"codigo": "2240", "descripcion": "Camisola Jardinera escoces", "categoria": "Chaquetas De Dama Blanco Y Color", "talle": "XL", "precio_efectivo": 48000}, {"codigo": "2774/79", "descripcion": "Camisola blanca con canesú", "categoria": "Chaquetas De Dama Blanco Y Color", "talle": "54", "precio_efectivo": 55000}, {"codigo": "2298", "descripcion": "Camisola maestra cuello y broderrí", "categoria": "Chaquetas De Dama Blanco Y Color", "talle": "54", "precio_efectivo": 58000}, {"codigo": "2742/82", "descripcion": "Camisola maestra Jardinera  manga desmont. Bche", "categoria": "Chaquetas De Dama Blanco Y Color", "talle": "54", "precio_efectivo": 57000}, {"codigo": "2770", "descripcion": "Camisola maestra sin manga c/broche y broderi", "categoria": "Chaquetas De Dama Blanco Y Color", "talle": "54", "precio_efectivo": 58000}, {"codigo": "2773", "descripcion": "Delantal blanco/cuadrille c/corazón y broderi", "categoria": "Chaquetas De Dama Blanco Y Color", "talle": "3", "precio_efectivo": 48000}, {"codigo": "2334", "descripcion": "Camisola Maestra Jardinera blanco c/broderi", "categoria": "Chaquetas De Dama Blanco Y Color", "talle": "54", "precio_efectivo": 46000}, {"codigo": "2779", "descripcion": "Camisola blanco c/tira para entalle", "categoria": "Chaquetas De Dama Blanco Y Color", "talle": "3", "precio_efectivo": 57000}, {"codigo": "2236", "descripcion": "Camisola dama blanco vivo y tira", "categoria": "Chaquetas De Dama Blanco Y Color", "talle": "3", "precio_efectivo": 53000}, {"codigo": "2743", "descripcion": "CAMISOLA BLANCO CON VIVO OFERTA", "categoria": "Chaquetas De Dama Blanco Y Color", "talle": "54", "precio_efectivo": 42000}, {"codigo": "2765", "descripcion": "Ponchito Saber c/SPAM tipo jardineroPantalón", "categoria": "Chaquetas De Dama Blanco Y Color", "talle": "4", "precio_efectivo": 65000}, {"codigo": "300", "descripcion": "Pantalón hombre negro gabardina", "categoria": "Pantalon Hombre Dama", "talle": "54", "precio_efectivo": 49000}, {"codigo": "303", "descripcion": "Pantalón pie de pull cocinero náutico", "categoria": "Pantalon Hombre Dama", "talle": "3", "precio_efectivo": 43000}, {"codigo": "305", "descripcion": "Pantalòn ALPACA negro hombre", "categoria": "Pantalon Hombre Dama", "talle": "54", "precio_efectivo": 70000}, {"codigo": "306", "descripcion": "Pantalón de grafa Explora color", "categoria": "Pantalon Hombre Dama", "talle": "54", "precio_efectivo": 42000}, {"codigo": "307", "descripcion": "Pantalón cargo de grafa Explora", "categoria": "Pantalon Hombre Dama", "talle": "54", "precio_efectivo": 62000}, {"codigo": "309", "descripcion": "Pantalón de  sarga color hombre", "categoria": "Pantalon Hombre Dama", "talle": "54", "precio_efectivo": 58000}, {"codigo": "310", "descripcion": "Bombacha de campo grafa Explora", "categoria": "Pantalon Hombre Dama", "talle": "54", "precio_efectivo": 50000}, {"codigo": "312", "descripcion": "Pantalón náutico Arciel blanco", "categoria": "Pantalon Hombre Dama", "talle": "3", "precio_efectivo": 37000}, {"codigo": "312", "descripcion": "Pantalón náutico Arciel color", "categoria": "Pantalon Hombre Dama", "talle": "3", "precio_efectivo": 39000}, {"codigo": "315", "descripcion": "Pantalón de dama tela mecánica color", "categoria": "Pantalon Hombre Dama", "talle": "XL", "precio_efectivo": 43000}, {"codigo": "315", "descripcion": "Pantalón dama negro SLIM gabardina", "categoria": "Pantalon Hombre Dama", "talle": "XL", "precio_efectivo": 50000}, {"codigo": "316", "descripcion": "Pantalón de dama gabardian elastizada", "categoria": "Pantalon Hombre Dama", "talle": "XL", "precio_efectivo": 49000}, {"codigo": "25001", "descripcion": "Pantalón nego de hombre ALPACA elastizado", "categoria": "Pantalon Hombre Dama", "talle": "54", "precio_efectivo": 70000}, {"codigo": "321", "descripcion": "Mameluco de grafa azul marino", "categoria": "Mamelucos De Grafa Azul Marino", "talle": "XL", "precio_efectivo": 58000}, {"codigo": "321", "descripcion": "Mameluco de grafa azul marino", "categoria": "Mamelucos De Grafa Azul Marino", "talle": "XXL", "precio_efectivo": 66000}, {"codigo": "25", "descripcion": "Chaleco delantal de mozo Bengalina", "categoria": "Chalecos De Hombre Y Dama", "talle": "3", "precio_efectivo": 40000}, {"codigo": "134", "descripcion": "Chaleco de mozo tela mecánica color", "categoria": "Chalecos De Hombre Y Dama", "talle": "XL", "precio_efectivo": 43000}, {"codigo": "134", "descripcion": "Chaleco de mozo ALPACA color", "categoria": "Chalecos De Hombre Y Dama", "talle": "XL", "precio_efectivo": 55000}, {"codigo": "138", "descripcion": "Chaleco de mozo jackard", "categoria": "Chalecos De Hombre Y Dama", "talle": "XL", "precio_efectivo": 60000}, {"codigo": "139", "descripcion": "CHALECO DE MOZO VERDE  OFERTA", "categoria": "Chalecos De Hombre Y Dama", "talle": "M", "precio_efectivo": 30000}, {"codigo": "428", "descripcion": "Camisa blanca de dama m/larga", "categoria": "Camisas De Hombre Dama Y Niños", "talle": "XL", "precio_efectivo": 41000}, {"codigo": "B321", "descripcion": "Camisa blanca de dama alforzada m/larga", "categoria": "Camisas De Hombre Dama Y Niños", "talle": "XL", "precio_efectivo": 45000}, {"codigo": "418", "descripcion": "Camisa blanca de dama M 3/4", "categoria": "Camisas De Hombre Dama Y Niños", "talle": "XL", "precio_efectivo": 40000}, {"codigo": "419", "descripcion": "Camisa negra de dama m/larga", "categoria": "Camisas De Hombre Dama Y Niños", "talle": "XL", "precio_efectivo": 45000}, {"codigo": "420", "descripcion": "Camisa negra de dama M 3/4", "categoria": "Camisas De Hombre Dama Y Niños", "talle": "XL", "precio_efectivo": 43000}, {"codigo": "401", "descripcion": "Camisa blanca de hombre M/larga", "categoria": "Camisas De Hombre Dama Y Niños", "talle": "XL", "precio_efectivo": 45000}, {"codigo": "402", "descripcion": "Camisa negra de  hombre m/larga", "categoria": "Camisas De Hombre Dama Y Niños", "talle": "XL", "precio_efectivo": 48000}, {"codigo": "405", "descripcion": "Camisa de hombre tela Oxfort m/larga", "categoria": "Camisas De Hombre Dama Y Niños", "talle": "XL", "precio_efectivo": 55000}, {"codigo": "406", "descripcion": "Camisa de grafa color m/larga", "categoria": "Camisas De Hombre Dama Y Niños", "talle": "44", "precio_efectivo": 42000}, {"codigo": "407", "descripcion": "Camisa blanca c/mao m/larga", "categoria": "Camisas De Hombre Dama Y Niños", "talle": "XL", "precio_efectivo": 46000}, {"codigo": "407", "descripcion": "Camisa negra c/mao m/larga", "categoria": "Camisas De Hombre Dama Y Niños", "talle": "XL", "precio_efectivo": 49000}, {"codigo": "426/7", "descripcion": "Camisa blanca de niño m/larga", "categoria": "Camisas De Hombre Dama Y Niños", "talle": "8", "precio_efectivo": 24000}, {"codigo": "426/7", "descripcion": "Camisa blanca de niño m/larga", "categoria": "Camisas De Hombre Dama Y Niños", "talle": "10", "precio_efectivo": 27000}, {"codigo": "426/7", "descripcion": "Camisa blanca de niño m/larga", "categoria": "Camisas De Hombre Dama Y Niños", "talle": "12", "precio_efectivo": 31000}, {"codigo": "426/7", "descripcion": "Camisa blanca de niño m/larga", "categoria": "Camisas De Hombre Dama Y Niños", "talle": "14", "precio_efectivo": 34000}, {"codigo": "426/7", "descripcion": "Camisa blanca de niño m/larga", "categoria": "Camisas De Hombre Dama Y Niños", "talle": "16", "precio_efectivo": 37000}, {"codigo": "280", "descripcion": "Campera de polar azul marino", "categoria": "Camperas De Polar", "talle": "8", "precio_efectivo": 28000}, {"codigo": "280", "descripcion": "Campera de polar azul marino", "categoria": "Camperas De Polar", "talle": "10", "precio_efectivo": 30000}, {"codigo": "280", "descripcion": "Campera de polar azul marino", "categoria": "Camperas De Polar", "talle": "12", "precio_efectivo": 33000}, {"codigo": "280", "descripcion": "Campera de polar azul marino", "categoria": "Camperas De Polar", "talle": "14", "precio_efectivo": 35000}, {"codigo": "280", "descripcion": "Campera de polar azul marino", "categoria": "Camperas De Polar", "talle": "16", "precio_efectivo": 38000}, {"codigo": "280", "descripcion": "Campera de polar azul marino", "categoria": "Camperas De Polar", "talle": "S", "precio_efectivo": 41000}, {"codigo": "280", "descripcion": "Campera de polar azul marino", "categoria": "Camperas De Polar", "talle": "M", "precio_efectivo": 43000}, {"codigo": "280", "descripcion": "Campera de polar azul marino", "categoria": "Camperas De Polar", "talle": "L", "precio_efectivo": 46000}, {"codigo": "280", "descripcion": "Campera de polar azul marino", "categoria": "Camperas De Polar", "talle": "XL", "precio_efectivo": 49000}, {"codigo": "281", "descripcion": "Chaleco de polar azul marino", "categoria": "Chalecos De Polar", "talle": "8", "precio_efectivo": 24000}, {"codigo": "281", "descripcion": "Chaleco de polar azul marino", "categoria": "Chalecos De Polar", "talle": "10", "precio_efectivo": 27000}, {"codigo": "281", "descripcion": "Chaleco de polar azul marino", "categoria": "Chalecos De Polar", "talle": "12", "precio_efectivo": 29000}, {"codigo": "281", "descripcion": "Chaleco de polar azul marino", "categoria": "Chalecos De Polar", "talle": "14", "precio_efectivo": 31000}, {"codigo": "281", "descripcion": "Chaleco de polar azul marino", "categoria": "Chalecos De Polar", "talle": "16", "precio_efectivo": 33000}, {"codigo": "281", "descripcion": "Chaleco de polar azul marino", "categoria": "Chalecos De Polar", "talle": "S", "precio_efectivo": 35000}, {"codigo": "281", "descripcion": "Chaleco de polar azul marino", "categoria": "Chalecos De Polar", "talle": "M", "precio_efectivo": 37000}, {"codigo": "281", "descripcion": "Chaleco de polar azul marino", "categoria": "Chalecos De Polar", "talle": "L", "precio_efectivo": 39000}, {"codigo": "281", "descripcion": "Chaleco de polar azul marino", "categoria": "Chalecos De Polar", "talle": "XL", "precio_efectivo": 41000}, {"codigo": "1", "descripcion": "Moño de raso negro color", "categoria": "Corbatas/Corbatines Accesorios Y Delantales Varios", "talle": "CH", "precio_efectivo": 7500}, {"codigo": "2", "descripcion": "Moño de raso negro color", "categoria": "Corbatas/Corbatines Accesorios Y Delantales Varios", "talle": "MED", "precio_efectivo": 8000}, {"codigo": "3", "descripcion": "Moño de terciopelo color", "categoria": "Corbatas/Corbatines Accesorios Y Delantales Varios", "talle": "MED", "precio_efectivo": 12000}, {"codigo": "4", "descripcion": "Guantes de algodón blanco", "categoria": "Corbatas/Corbatines Accesorios Y Delantales Varios", "talle": "UNI", "precio_efectivo": 9500}, {"codigo": "5", "descripcion": "Pañuelo triángulo color", "categoria": "Corbatas/Corbatines Accesorios Y Delantales Varios", "talle": "UNI", "precio_efectivo": 7000}, {"codigo": "5", "descripcion": "Pañuel o triángulo blanco", "categoria": "Corbatas/Corbatines Accesorios Y Delantales Varios", "talle": "UNI", "precio_efectivo": 6500}, {"codigo": "6", "descripcion": "Cristal de algodón blanco", "categoria": "Corbatas/Corbatines Accesorios Y Delantales Varios", "talle": "UNI", "precio_efectivo": 6800}, {"codigo": "10", "descripcion": "Gorro de cocinero blanco", "categoria": "Corbatas/Corbatines Accesorios Y Delantales Varios", "talle": "Único", "precio_efectivo": 12000}, {"codigo": "11", "descripcion": "Gorro de cocinero color", "categoria": "Corbatas/Corbatines Accesorios Y Delantales Varios", "talle": "Único", "precio_efectivo": 13000}, {"codigo": "12", "descripcion": "Gorro plizado cocinero blanco", "categoria": "Corbatas/Corbatines Accesorios Y Delantales Varios", "talle": "BAJO", "precio_efectivo": 10000}, {"codigo": "13", "descripcion": "Delantal pechera gabardina blanco", "categoria": "Corbatas/Corbatines Accesorios Y Delantales Varios", "talle": "Único", "precio_efectivo": 17000}, {"codigo": "13", "descripcion": "Delantal pechera de gabardina color", "categoria": "Corbatas/Corbatines Accesorios Y Delantales Varios", "talle": "Único", "precio_efectivo": 19000}, {"codigo": "13", "descripcion": "Delantal pechera Alpacuna-Bengalina", "categoria": "Corbatas/Corbatines Accesorios Y Delantales Varios", "talle": "Único", "precio_efectivo": 25000}, {"codigo": "14", "descripcion": "Delantal de gabardina blanco/cintura chef", "categoria": "Corbatas/Corbatines Accesorios Y Delantales Varios", "talle": "Único", "precio_efectivo": 18000}, {"codigo": "14", "descripcion": "Delantal de gabardina color cintura chef", "categoria": "Corbatas/Corbatines Accesorios Y Delantales Varios", "talle": "Único", "precio_efectivo": 19000}, {"codigo": "14", "descripcion": "Delantal de cintura Alpacuna-Bengalina", "categoria": "Corbatas/Corbatines Accesorios Y Delantales Varios", "talle": "Único", "precio_efectivo": 27000}, {"codigo": "C804", "descripcion": "DELANTAL PECHERA DE JEAN AZUL C/TIRAS", "categoria": "Corbatas/Corbatines Accesorios Y Delantales Varios", "talle": "UNI", "precio_efectivo": 36000}, {"codigo": "C808", "descripcion": "Delantal pechera gabardina color con gancho", "categoria": "Corbatas/Corbatines Accesorios Y Delantales Varios", "talle": "UNI", "precio_efectivo": 30000}, {"codigo": "496", "descripcion": "DELANTAL PECHERA JEAN C/ECO CUERO", "categoria": "Corbatas/Corbatines Accesorios Y Delantales Varios", "talle": "UNI", "precio_efectivo": 33000}, {"codigo": "17", "descripcion": "Delantal ponchito de Jean con bies", "categoria": "Corbatas/Corbatines Accesorios Y Delantales Varios", "talle": "1", "precio_efectivo": 40000}, {"codigo": "22", "descripcion": "Delantal pochito Arciel color c/bies", "categoria": "Corbatas/Corbatines Accesorios Y Delantales Varios", "talle": "1", "precio_efectivo": 36000}, {"codigo": "22", "descripcion": "DELANTAL PONCHITO DE ARCIEL CON BIES COLOR", "categoria": "Corbatas/Corbatines Accesorios Y Delantales Varios", "talle": "2", "precio_efectivo": 41000}, {"codigo": "C332", "descripcion": "Delantal de jean tipo jardinero", "categoria": "Corbatas/Corbatines Accesorios Y Delantales Varios", "talle": "Único", "precio_efectivo": 45000}, {"codigo": "778", "descripcion": "Delantal de Jean c/bolsillo Oval", "categoria": "Corbatas/Corbatines Accesorios Y Delantales Varios", "talle": "3", "precio_efectivo": 49000}, {"codigo": "24", "descripcion": "Delantal ponchito simple blanco", "categoria": "Corbatas/Corbatines Accesorios Y Delantales Varios", "talle": "3", "precio_efectivo": 35000}, {"codigo": "280/260", "descripcion": "Delantal blanco c/estampa y escoces", "categoria": "Corbatas/Corbatines Accesorios Y Delantales Varios", "talle": "3", "precio_efectivo": 35000}, {"codigo": "7278", "descripcion": "Ponchito blanco c/bolsillo Oval", "categoria": "Corbatas/Corbatines Accesorios Y Delantales Varios", "talle": "3", "precio_efectivo": 47000}, {"codigo": "9271", "descripcion": "Ponchito blanco c/volados", "categoria": "Corbatas/Corbatines Accesorios Y Delantales Varios", "talle": "3", "precio_efectivo": 27000}, {"codigo": "42", "descripcion": "Cofia/bandan c/tirasa blanco", "categoria": "Corbatas/Corbatines Accesorios Y Delantales Varios", "talle": "UNI", "precio_efectivo": 8000}, {"codigo": "43", "descripcion": "Cofia/bandan c/tirasa color", "categoria": "Corbatas/Corbatines Accesorios Y Delantales Varios", "talle": "UNI", "precio_efectivo": 9000}, {"codigo": "81", "descripcion": "FAJA FLAMENCA DE RASO COLOR", "categoria": "Corbatas/Corbatines Accesorios Y Delantales Varios", "talle": "UNI", "precio_efectivo": 42000}, {"codigo": "9256", "descripcion": "Delantal blanco rosa c/apliques y más", "categoria": "Corbatas/Corbatines Accesorios Y Delantales Varios", "talle": "3", "precio_efectivo": 48000}, {"codigo": "14", "descripcion": "Delantal PVC blanco largo liviano", "categoria": "Corbatas/Corbatines Accesorios Y Delantales Varios", "talle": "Único", "precio_efectivo": 24000}, {"codigo": "15", "descripcion": "Delantal impermeable BAGUN", "categoria": "Corbatas/Corbatines Accesorios Y Delantales Varios", "talle": "Único", "precio_efectivo": 19000}, {"codigo": "10", "descripcion": "GORRITO COCINERITO BLANCO", "categoria": "Corbatas/Corbatines Accesorios Y Delantales Varios", "talle": "Único", "precio_efectivo": 9000}, {"codigo": "15", "descripcion": "DELANTAL COCINERITO", "categoria": "Corbatas/Corbatines Accesorios Y Delantales Varios", "talle": "Único", "precio_efectivo": 11000}, {"codigo": "0", "descripcion": "LOGOS BORDADOS", "categoria": "Corbatas/Corbatines Accesorios Y Delantales Varios", "talle": "Único", "precio_efectivo": 4000}, {"codigo": "75", "descripcion": "CORBATIN C/ELASTICO COLOR", "categoria": "Corbatas/Corbatines Accesorios Y Delantales Varios", "talle": "Único", "precio_efectivo": 7000}, {"codigo": "76", "descripcion": "CORBATA TEJIDA COLOR", "categoria": "Corbatas/Corbatines Accesorios Y Delantales Varios", "talle": "Único", "precio_efectivo": 9000}, {"codigo": "77", "descripcion": "CORBATA LISA COLOR", "categoria": "Corbatas/Corbatines Accesorios Y Delantales Varios", "talle": "Único", "precio_efectivo": 10000}, {"codigo": "78", "descripcion": "CORBATA DE FANTASIA", "categoria": "Corbatas/Corbatines Accesorios Y Delantales Varios", "talle": "Único", "precio_efectivo": 18000}, {"codigo": "79", "descripcion": "CORBATA LISA JUVENIL", "categoria": "Corbatas/Corbatines Accesorios Y Delantales Varios", "talle": "Único", "precio_efectivo": 8000}, {"codigo": "80", "descripcion": "CORBATA CASTEX", "categoria": "Corbatas/Corbatines Accesorios Y Delantales Varios", "talle": "Único", "precio_efectivo": 10000}, {"codigo": "800", "descripcion": "GORRA FORMULA 1 BLANCO", "categoria": "Corbatas/Corbatines Accesorios Y Delantales Varios", "talle": "Único", "precio_efectivo": 10000}, {"codigo": "800", "descripcion": "GORRA FORMULA 1 COLOR", "categoria": "Corbatas/Corbatines Accesorios Y Delantales Varios", "talle": "Único", "precio_efectivo": 11000}, {"codigo": "590", "descripcion": "Campera de abrigo semi - impermeable", "categoria": "Camperas De Abrigo", "talle": "8", "precio_efectivo": 48000}, {"codigo": "590", "descripcion": "Campera de abrigo semi - impermeable", "categoria": "Camperas De Abrigo", "talle": "10", "precio_efectivo": 53000}, {"codigo": "590", "descripcion": "Campera de abrigo semi - impermeable", "categoria": "Camperas De Abrigo", "talle": "12", "precio_efectivo": 58000}, {"codigo": "590", "descripcion": "Campera de abrigo semi - impermeable", "categoria": "Camperas De Abrigo", "talle": "14", "precio_efectivo": 63000}, {"codigo": "590", "descripcion": "Campera de abrigo semi - impermeable", "categoria": "Camperas De Abrigo", "talle": "16", "precio_efectivo": 68000}, {"codigo": "590", "descripcion": "Campera de abrigo semi - impermeable", "categoria": "Camperas De Abrigo", "talle": "S", "precio_efectivo": 73000}, {"codigo": "590", "descripcion": "Campera de abrigo semi - impermeable", "categoria": "Camperas De Abrigo", "talle": "M", "precio_efectivo": 76000}, {"codigo": "590", "descripcion": "Campera de abrigo semi - impermeable", "categoria": "Camperas De Abrigo", "talle": "L", "precio_efectivo": 79000}, {"codigo": "590", "descripcion": "Campera de abrigo semi - impermeable", "categoria": "Camperas De Abrigo", "talle": "XL", "precio_efectivo": 85000}, {"codigo": "553", "descripcion": "Blaizer de paño azul marino", "categoria": "Blaizer De Paño", "talle": "8", "precio_efectivo": 45000}, {"codigo": "553", "descripcion": "Blaizer de paño azul marino", "categoria": "Blaizer De Paño", "talle": "10", "precio_efectivo": 50000}, {"codigo": "553", "descripcion": "Blaizer de paño azul marino", "categoria": "Blaizer De Paño", "talle": "12", "precio_efectivo": 55000}, {"codigo": "553", "descripcion": "Blaizer de paño azul marino", "categoria": "Blaizer De Paño", "talle": "14", "precio_efectivo": 60000}, {"codigo": "553", "descripcion": "Blaizer de paño azul marino", "categoria": "Blaizer De Paño", "talle": "16", "precio_efectivo": 65000}, {"codigo": "553", "descripcion": "Blaizer de paño azul marino", "categoria": "Blaizer De Paño", "talle": "54", "precio_efectivo": 70000}, {"codigo": "550", "descripcion": "Blaizer de paño azul marino", "categoria": "Blaizer De Paño", "talle": "UNI", "precio_efectivo": 68000}, {"codigo": "365", "descripcion": "Remera blanca c/logo de FASTA", "categoria": "Remeras Blancas De Fasta", "talle": "6", "precio_efectivo": 15000}, {"codigo": "365", "descripcion": "Remera blanca c/logo de FASTA", "categoria": "Remeras Blancas De Fasta", "talle": "8", "precio_efectivo": 15500}, {"codigo": "365", "descripcion": "Remera blanca c/logo de FASTA", "categoria": "Remeras Blancas De Fasta", "talle": "10", "precio_efectivo": 16500}, {"codigo": "365", "descripcion": "Remera blanca c/logo de FASTA", "categoria": "Remeras Blancas De Fasta", "talle": "12", "precio_efectivo": 17500}, {"codigo": "365", "descripcion": "Remera blanca c/logo de FASTA", "categoria": "Remeras Blancas De Fasta", "talle": "14", "precio_efectivo": 19000}, {"codigo": "365", "descripcion": "Remera blanca c/logo de FASTA", "categoria": "Remeras Blancas De Fasta", "talle": "16", "precio_efectivo": 20000}, {"codigo": "365", "descripcion": "Remera blanca c/logo de FASTA", "categoria": "Remeras Blancas De Fasta", "talle": "1", "precio_efectivo": 21000}, {"codigo": "365", "descripcion": "Remera blanca c/logo de FASTA", "categoria": "Remeras Blancas De Fasta", "talle": "2", "precio_efectivo": 22000}, {"codigo": "365", "descripcion": "Remera blanca c/logo de FASTA", "categoria": "Remeras Blancas De Fasta", "talle": "3", "precio_efectivo": 23000}, {"codigo": "365", "descripcion": "Remera blanca c/logo de FASTA", "categoria": "Remeras Blancas De Fasta", "talle": "4", "precio_efectivo": 24000}, {"codigo": "240", "descripcion": "Guardapolvo color varón/nena con broches", "categoria": "Guardapolvo Nena/Varon Azul Francia", "talle": "8", "precio_efectivo": 42000}, {"codigo": "240", "descripcion": "Guardapolvo color varón/nena con broches", "categoria": "Guardapolvo Nena/Varon Azul Francia", "talle": "10", "precio_efectivo": 46000}, {"codigo": "240", "descripcion": "Guardapolvo color varón/nena con broches", "categoria": "Guardapolvo Nena/Varon Azul Francia", "talle": "12", "precio_efectivo": 50000}, {"codigo": "240", "descripcion": "Guardapolvo color varón/nena con broches", "categoria": "Guardapolvo Nena/Varon Azul Francia", "talle": "14", "precio_efectivo": 54000}, {"codigo": "240", "descripcion": "Guardapolvo color varón/nena con broches", "categoria": "Guardapolvo Nena/Varon Azul Francia", "talle": "16", "precio_efectivo": 58000}, {"codigo": "240", "descripcion": "Guardapolvo color varón/nena con broches", "categoria": "Guardapolvo Nena/Varon Azul Francia", "talle": "18", "precio_efectivo": 62000}, {"codigo": "242", "descripcion": "Guardapolvo blanco varón/nena con broches", "categoria": "Guardapolvo Nena/Varon Blanco Bche", "talle": "8", "precio_efectivo": 38000}, {"codigo": "242", "descripcion": "Guardapolvo blanco varón/nena con broches", "categoria": "Guardapolvo Nena/Varon Blanco Bche", "talle": "10", "precio_efectivo": 42000}, {"codigo": "242", "descripcion": "Guardapolvo blanco varón/nena con broches", "categoria": "Guardapolvo Nena/Varon Blanco Bche", "talle": "12", "precio_efectivo": 46000}, {"codigo": "242", "descripcion": "Guardapolvo blanco varón/nena con broches", "categoria": "Guardapolvo Nena/Varon Blanco Bche", "talle": "14", "precio_efectivo": 50000}, {"codigo": "242", "descripcion": "Guardapolvo blanco varón/nena con broches", "categoria": "Guardapolvo Nena/Varon Blanco Bche", "talle": "16", "precio_efectivo": 54000}, {"codigo": "242", "descripcion": "Guardapolvo blanco varón/nena con broches", "categoria": "Guardapolvo Nena/Varon Blanco Bche", "talle": "18", "precio_efectivo": 60000}, {"codigo": "416", "descripcion": "Guardapolvo nena alforzado con broches", "categoria": "Guardapolvo Nena Bco Alforzado", "talle": "8", "precio_efectivo": 42000}, {"codigo": "416", "descripcion": "Guardapolvo nena alforzado con broches", "categoria": "Guardapolvo Nena Bco Alforzado", "talle": "10", "precio_efectivo": 45000}, {"codigo": "416", "descripcion": "Guardapolvo nena alforzado con broches", "categoria": "Guardapolvo Nena Bco Alforzado", "talle": "12", "precio_efectivo": 49000}, {"codigo": "416", "descripcion": "Guardapolvo nena alforzado con broches", "categoria": "Guardapolvo Nena Bco Alforzado", "talle": "14", "precio_efectivo": 51000}, {"codigo": "416", "descripcion": "Guardapolvo nena alforzado con broches", "categoria": "Guardapolvo Nena Bco Alforzado", "talle": "16", "precio_efectivo": 54000}, {"codigo": "416", "descripcion": "Guardapolvo nena alforzado con broches", "categoria": "Guardapolvo Nena Bco Alforzado", "talle": "18", "precio_efectivo": 58000}, {"codigo": "731", "descripcion": "Guardapolvo nena bco Tableado c/cinto broches", "categoria": "Guardapolvo De Nena C/Tablas Y Bche", "talle": "8", "precio_efectivo": 51000}, {"codigo": "731", "descripcion": "Guardapolvo nena bco Tableado c/cinto broches", "categoria": "Guardapolvo De Nena C/Tablas Y Bche", "talle": "10", "precio_efectivo": 58000}, {"codigo": "731", "descripcion": "Guardapolvo nena bco Tableado c/cinto broches", "categoria": "Guardapolvo De Nena C/Tablas Y Bche", "talle": "12", "precio_efectivo": 66000}, {"codigo": "731", "descripcion": "Guardapolvo nena bco Tableado c/cinto broches", "categoria": "Guardapolvo De Nena C/Tablas Y Bche", "talle": "14", "precio_efectivo": 73000}, {"codigo": "731", "descripcion": "Guardapolvo nena bco Tableado c/cinto broches", "categoria": "Guardapolvo De Nena C/Tablas Y Bche", "talle": "16", "precio_efectivo": 80000}, {"codigo": "731", "descripcion": "Guardapolvo nena bco Tableado c/cinto broches", "categoria": "Guardapolvo De Nena C/Tablas Y Bche", "talle": "18", "precio_efectivo": 85000}, {"codigo": "435", "descripcion": "Guardapolvo nena c/baby blanco c/broches", "categoria": "Guardapolvo Nena Bco Cuello Bebe", "talle": "8", "precio_efectivo": 49000}, {"codigo": "435", "descripcion": "Guardapolvo nena c/baby blanco c/broches", "categoria": "Guardapolvo Nena Bco Cuello Bebe", "talle": "10", "precio_efectivo": 51000}, {"codigo": "435", "descripcion": "Guardapolvo nena c/baby blanco c/broches", "categoria": "Guardapolvo Nena Bco Cuello Bebe", "talle": "12", "precio_efectivo": 55000}, {"codigo": "435", "descripcion": "Guardapolvo nena c/baby blanco c/broches", "categoria": "Guardapolvo Nena Bco Cuello Bebe", "talle": "14", "precio_efectivo": 60000}, {"codigo": "435", "descripcion": "Guardapolvo nena c/baby blanco c/broches", "categoria": "Guardapolvo Nena Bco Cuello Bebe", "talle": "16", "precio_efectivo": 66000}, {"codigo": "700", "descripcion": "Ponchito blanco nena con broderi", "categoria": "Ponchito Colegial Con Broderi", "talle": "6", "precio_efectivo": 22000}, {"codigo": "700", "descripcion": "Ponchito blanco nena con broderi", "categoria": "Ponchito Colegial Con Broderi", "talle": "8", "precio_efectivo": 24000}, {"codigo": "700", "descripcion": "Ponchito blanco nena con broderi", "categoria": "Ponchito Colegial Con Broderi", "talle": "10", "precio_efectivo": 27000}, {"codigo": "700", "descripcion": "Ponchito blanco nena con broderi", "categoria": "Ponchito Colegial Con Broderi", "talle": "12", "precio_efectivo": 30000}, {"codigo": "700", "descripcion": "Ponchito blanco nena con broderi", "categoria": "Ponchito Colegial Con Broderi", "talle": "14", "precio_efectivo": 33000}, {"codigo": "700", "descripcion": "Ponchito blanco nena con broderi", "categoria": "Ponchito Colegial Con Broderi", "talle": "16", "precio_efectivo": 36000}, {"codigo": "772", "descripcion": "Camisola nena blanco s/mangas c/bche y broderi", "categoria": "Camisola S/Mangas C/Bches", "talle": "6", "precio_efectivo": 25000}, {"codigo": "772", "descripcion": "Camisola nena blanco s/mangas c/bche y broderi", "categoria": "Camisola S/Mangas C/Bches", "talle": "8", "precio_efectivo": 28000}, {"codigo": "772", "descripcion": "Camisola nena blanco s/mangas c/bche y broderi", "categoria": "Camisola S/Mangas C/Bches", "talle": "10", "precio_efectivo": 33000}, {"codigo": "772", "descripcion": "Camisola nena blanco s/mangas c/bche y broderi", "categoria": "Camisola S/Mangas C/Bches", "talle": "12", "precio_efectivo": 38000}, {"codigo": "772", "descripcion": "Camisola nena blanco s/mangas c/bche y broderi", "categoria": "Camisola S/Mangas C/Bches", "talle": "14", "precio_efectivo": 42000}, {"codigo": "772", "descripcion": "Camisola nena blanco s/mangas c/bche y broderi", "categoria": "Camisola S/Mangas C/Bches", "talle": "16", "precio_efectivo": 46000}, {"codigo": "309", "descripcion": "Pantalón de sarga gris", "categoria": "Pantalon De Sarga Gris", "talle": "8", "precio_efectivo": 41000}, {"codigo": "309", "descripcion": "Pantalón de sarga gris", "categoria": "Pantalon De Sarga Gris", "talle": "10", "precio_efectivo": 43000}, {"codigo": "309", "descripcion": "Pantalón de sarga gris", "categoria": "Pantalon De Sarga Gris", "talle": "12", "precio_efectivo": 45000}, {"codigo": "309", "descripcion": "Pantalón de sarga gris", "categoria": "Pantalon De Sarga Gris", "talle": "14", "precio_efectivo": 47000}, {"codigo": "309", "descripcion": "Pantalón de sarga gris", "categoria": "Pantalon De Sarga Gris", "talle": "16", "precio_efectivo": 50000}, {"codigo": "309", "descripcion": "Pantalón de sarga gris", "categoria": "Pantalon De Sarga Gris", "talle": "38/54", "precio_efectivo": 58000}, {"codigo": "309", "descripcion": "Pantalón de sarga gris", "categoria": "Pantalon De Sarga Gris", "talle": "56", "precio_efectivo": 64000}, {"codigo": "310", "descripcion": "Pantalón gabardina gris Fullback", "categoria": "Pantalon De Gabardina Gris", "talle": "8", "precio_efectivo": 29000}, {"codigo": "310", "descripcion": "Pantalón gabardina gris Fullback", "categoria": "Pantalon De Gabardina Gris", "talle": "10", "precio_efectivo": 31000}, {"codigo": "310", "descripcion": "Pantalón gabardina gris Fullback", "categoria": "Pantalon De Gabardina Gris", "talle": "12", "precio_efectivo": 35000}, {"codigo": "310", "descripcion": "Pantalón gabardina gris Fullback", "categoria": "Pantalon De Gabardina Gris", "talle": "14", "precio_efectivo": 38000}, {"codigo": "310", "descripcion": "Pantalón gabardina gris Fullback", "categoria": "Pantalon De Gabardina Gris", "talle": "16", "precio_efectivo": 42000}, {"codigo": "310", "descripcion": "Pantalón gabardina gris Fullback", "categoria": "Pantalon De Gabardina Gris", "talle": "38/54", "precio_efectivo": 49000}, {"codigo": "310", "descripcion": "Pantalón gabardina gris Fullback", "categoria": "Pantalon De Gabardina Gris", "talle": "56", "precio_efectivo": 55000}, {"codigo": "311", "descripcion": "Pantalón de corderoy gris - azul marino", "categoria": "Pantalon De Corderoy", "talle": "8", "precio_efectivo": 40000}, {"codigo": "311", "descripcion": "Pantalón de corderoy gris - azul marino", "categoria": "Pantalon De Corderoy", "talle": "10", "precio_efectivo": 43000}, {"codigo": "311", "descripcion": "Pantalón de corderoy gris - azul marino", "categoria": "Pantalon De Corderoy", "talle": "12", "precio_efectivo": 46000}, {"codigo": "311", "descripcion": "Pantalón de corderoy gris - azul marino", "categoria": "Pantalon De Corderoy", "talle": "14", "precio_efectivo": 49000}, {"codigo": "311", "descripcion": "Pantalón de corderoy gris - azul marino", "categoria": "Pantalon De Corderoy", "talle": "16", "precio_efectivo": 53000}, {"codigo": "311", "descripcion": "Pantalón de corderoy gris - azul marino", "categoria": "Pantalon De Corderoy", "talle": "38/54", "precio_efectivo": 57000}, {"codigo": "311", "descripcion": "Pantalón de corderoy gris - azul marino", "categoria": "Pantalon De Corderoy", "talle": "56", "precio_efectivo": 64000}, {"codigo": "601", "descripcion": "Algodón blanco - color", "categoria": "Medias Ciudadela", "talle": "2", "precio_efectivo": 3900}, {"codigo": "601", "descripcion": "Algodón blanco - color", "categoria": "Medias Ciudadela", "talle": "3", "precio_efectivo": 4100}, {"codigo": "601", "descripcion": "Algodón blanco - color", "categoria": "Medias Ciudadela", "talle": "4", "precio_efectivo": 4600}, {"codigo": "601", "descripcion": "Algodón blanco - color", "categoria": "Medias Ciudadela", "talle": "5", "precio_efectivo": 5000}, {"codigo": "750", "descripcion": "Calza de algodón Ciudadela T 8 -16", "categoria": "Calza De Nena Algodon Ciudadela", "talle": "Único", "precio_efectivo": 13000}, {"codigo": "600", "descripcion": "Panty opaca Multifilamento color", "categoria": "Calza De Nena Algodon Ciudadela", "talle": "S/XL", "precio_efectivo": 11000}, {"codigo": "603", "descripcion": "Can Can Cashmilon color", "categoria": "Calza De Nena Algodon Ciudadela", "talle": "6", "precio_efectivo": 9000}, {"codigo": "603", "descripcion": "Can Can Cashmilon color", "categoria": "Calza De Nena Algodon Ciudadela", "talle": "8", "precio_efectivo": 11000}, {"codigo": "603", "descripcion": "Can Can Cashmilon color", "categoria": "Calza De Nena Algodon Ciudadela", "talle": "10", "precio_efectivo": 12000}, {"codigo": "603", "descripcion": "Can Can Cashmilon color", "categoria": "Calza De Nena Algodon Ciudadela", "talle": "12", "precio_efectivo": 13000}, {"codigo": "603", "descripcion": "Can Can Cashmilon color", "categoria": "Calza De Nena Algodon Ciudadela", "talle": "14", "precio_efectivo": 14000}, {"codigo": "571", "descripcion": "Pollera Arciel color forrada", "categoria": "Polleras Varias", "talle": "Único", "precio_efectivo": 39000}, {"codigo": "571", "descripcion": "Pollera Arciel blanco forrada", "categoria": "Polleras Varias", "talle": "Único", "precio_efectivo": 33000}, {"codigo": "342", "descripcion": "Sarga gris colegial con tablón", "categoria": "Polleras Colegial", "talle": "8", "precio_efectivo": 31000}, {"codigo": "342", "descripcion": "Sarga gris colegial con tablón", "categoria": "Polleras Colegial", "talle": "10", "precio_efectivo": 32000}, {"codigo": "342", "descripcion": "Sarga gris colegial con tablón", "categoria": "Polleras Colegial", "talle": "12", "precio_efectivo": 34000}, {"codigo": "342", "descripcion": "Sarga gris colegial con tablón", "categoria": "Polleras Colegial", "talle": "14", "precio_efectivo": 36000}, {"codigo": "342", "descripcion": "Sarga gris colegial con tablón", "categoria": "Polleras Colegial", "talle": "16", "precio_efectivo": 39000}, {"codigo": "342", "descripcion": "Sarga gris colegial con tablón", "categoria": "Polleras Colegial", "talle": "18", "precio_efectivo": 41000}, {"codigo": "342", "descripcion": "Sarga gris colegial con tablón", "categoria": "Polleras Colegial", "talle": "20", "precio_efectivo": 44000}, {"codigo": "342", "descripcion": "Sarga gris colegial con tablón", "categoria": "Polleras Colegial", "talle": "22", "precio_efectivo": 46000}, {"codigo": "342", "descripcion": "Sarga gris colegial con tablón", "categoria": "Polleras Colegial", "talle": "24", "precio_efectivo": 48000}, {"codigo": "344", "descripcion": "Sarga tableada bordo Inst. Patagónico", "categoria": "Polleras Colegial", "talle": "8", "precio_efectivo": 40000}, {"codigo": "344", "descripcion": "Sarga tableada bordo Inst. Patagónico", "categoria": "Polleras Colegial", "talle": "10", "precio_efectivo": 42000}, {"codigo": "344", "descripcion": "Sarga tableada bordo Inst. Patagónico", "categoria": "Polleras Colegial", "talle": "12", "precio_efectivo": 45000}, {"codigo": "344", "descripcion": "Sarga tableada bordo Inst. Patagónico", "categoria": "Polleras Colegial", "talle": "14", "precio_efectivo": 48000}, {"codigo": "344", "descripcion": "Sarga tableada bordo Inst. Patagónico", "categoria": "Polleras Colegial", "talle": "16", "precio_efectivo": 50000}, {"codigo": "344", "descripcion": "Sarga tableada bordo Inst. Patagónico", "categoria": "Polleras Colegial", "talle": "18", "precio_efectivo": 53000}, {"codigo": "344", "descripcion": "Sarga tableada bordo Inst. Patagónico", "categoria": "Polleras Colegial", "talle": "20", "precio_efectivo": 55000}, {"codigo": "344", "descripcion": "Sarga tableada bordo Inst. Patagónico", "categoria": "Polleras Colegial", "talle": "40", "precio_efectivo": 58000}, {"codigo": "344", "descripcion": "Sarga tableada bordo Inst. Patagónico", "categoria": "Polleras Colegial", "talle": "42", "precio_efectivo": 60000}, {"codigo": "344", "descripcion": "Sarga tableada bordo Inst. Patagónico", "categoria": "Polleras Colegial", "talle": "44", "precio_efectivo": 66000}, {"codigo": "345", "descripcion": "Jumpers gris/verde Tableado", "categoria": "Jumpers Colegial", "talle": "8", "precio_efectivo": 44000}, {"codigo": "345", "descripcion": "Jumpers gris/verde Tableado", "categoria": "Jumpers Colegial", "talle": "10", "precio_efectivo": 46000}, {"codigo": "345", "descripcion": "Jumpers gris/verde Tableado", "categoria": "Jumpers Colegial", "talle": "12", "precio_efectivo": 49000}, {"codigo": "345", "descripcion": "Jumpers gris/verde Tableado", "categoria": "Jumpers Colegial", "talle": "14", "precio_efectivo": 53000}, {"codigo": "345", "descripcion": "Jumpers gris/verde Tableado", "categoria": "Jumpers Colegial", "talle": "16", "precio_efectivo": 56000}, {"codigo": "437", "descripcion": "Polera Blanca", "categoria": "Poleras De Algodón", "talle": "8", "precio_efectivo": 19000}, {"codigo": "437", "descripcion": "Polera Blanca", "categoria": "Poleras De Algodón", "talle": "10", "precio_efectivo": 21000}, {"codigo": "437", "descripcion": "Polera Blanca", "categoria": "Poleras De Algodón", "talle": "12", "precio_efectivo": 23000}, {"codigo": "437", "descripcion": "Polera Blanca", "categoria": "Poleras De Algodón", "talle": "14", "precio_efectivo": 26000}, {"codigo": "437", "descripcion": "Polera Blanca", "categoria": "Poleras De Algodón", "talle": "16", "precio_efectivo": 29000}, {"codigo": "437", "descripcion": "Polera Blanca", "categoria": "Poleras De Algodón", "talle": "18", "precio_efectivo": 32000}, {"codigo": "437", "descripcion": "Polera Blanca", "categoria": "Poleras De Algodón", "talle": "1 2 3", "precio_efectivo": 35000}, {"codigo": "380", "descripcion": "Remera celste de FASTA M/corta", "categoria": "Remera Celeste De Fasta", "talle": "12", "precio_efectivo": 25000}, {"codigo": "380", "descripcion": "Remera celste de FASTA M/corta", "categoria": "Remera Celeste De Fasta", "talle": "14", "precio_efectivo": 27000}, {"codigo": "380", "descripcion": "Remera celste de FASTA M/corta", "categoria": "Remera Celeste De Fasta", "talle": "16", "precio_efectivo": 29000}, {"codigo": "380", "descripcion": "Remera celste de FASTA M/corta", "categoria": "Remera Celeste De Fasta", "talle": "1", "precio_efectivo": 31000}, {"codigo": "380", "descripcion": "Remera celste de FASTA M/corta", "categoria": "Remera Celeste De Fasta", "talle": "2", "precio_efectivo": 34000}, {"codigo": "380", "descripcion": "Remera celste de FASTA M/corta", "categoria": "Remera Celeste De Fasta", "talle": "3", "precio_efectivo": 37000}, {"codigo": "380", "descripcion": "Remera celste de FASTA M/corta", "categoria": "Remera Celeste De Fasta", "talle": "4", "precio_efectivo": 39000}, {"codigo": "380", "descripcion": "Remera celste de FASTA M/corta", "categoria": "Remera Celeste De Fasta", "talle": "5", "precio_efectivo": 42000}, {"codigo": "291", "descripcion": "Bolsita de Arciel color Lisa", "categoria": "Remera Celeste De Fasta", "talle": "Único", "precio_efectivo": 9000}, {"codigo": "365", "descripcion": "Remera de pique manga corta", "categoria": "Remera De Pique Sin Logo", "talle": "6", "precio_efectivo": 14000}, {"codigo": "365", "descripcion": "Remera de pique manga corta", "categoria": "Remera De Pique Sin Logo", "talle": "8", "precio_efectivo": 15000}, {"codigo": "365", "descripcion": "Remera de pique manga corta", "categoria": "Remera De Pique Sin Logo", "talle": "10", "precio_efectivo": 16000}, {"codigo": "365", "descripcion": "Remera de pique manga corta", "categoria": "Remera De Pique Sin Logo", "talle": "12", "precio_efectivo": 17000}, {"codigo": "365", "descripcion": "Remera de pique manga corta", "categoria": "Remera De Pique Sin Logo", "talle": "14", "precio_efectivo": 18000}, {"codigo": "365", "descripcion": "Remera de pique manga corta", "categoria": "Remera De Pique Sin Logo", "talle": "16", "precio_efectivo": 20000}, {"codigo": "365", "descripcion": "Remera de pique manga corta", "categoria": "Remera De Pique Sin Logo", "talle": "1", "precio_efectivo": 21000}, {"codigo": "365", "descripcion": "Remera de pique manga corta", "categoria": "Remera De Pique Sin Logo", "talle": "2", "precio_efectivo": 22000}, {"codigo": "365", "descripcion": "Remera de pique manga corta", "categoria": "Remera De Pique Sin Logo", "talle": "3", "precio_efectivo": 24000}, {"codigo": "365", "descripcion": "Remera de pique manga corta", "categoria": "Remera De Pique Sin Logo", "talle": "4", "precio_efectivo": 25000}, {"codigo": "365", "descripcion": "Remera de pique manga corta", "categoria": "Remera De Pique Sin Logo", "talle": "5", "precio_efectivo": 27000}, {"codigo": "340", "descripcion": "Campera de gimnasia San Esteban con capucha", "categoria": "Campera De Gimnasia San Esteban", "talle": "6", "precio_efectivo": 53000}, {"codigo": "340", "descripcion": "Campera de gimnasia San Esteban con capucha", "categoria": "Campera De Gimnasia San Esteban", "talle": "8", "precio_efectivo": 58000}, {"codigo": "340", "descripcion": "Campera de gimnasia San Esteban con capucha", "categoria": "Campera De Gimnasia San Esteban", "talle": "10", "precio_efectivo": 61000}, {"codigo": "340", "descripcion": "Campera de gimnasia San Esteban con capucha", "categoria": "Campera De Gimnasia San Esteban", "talle": "12", "precio_efectivo": 65000}, {"codigo": "340", "descripcion": "Campera de gimnasia San Esteban con capucha", "categoria": "Campera De Gimnasia San Esteban", "talle": "14", "precio_efectivo": 68000}, {"codigo": "340", "descripcion": "Campera de gimnasia San Esteban con capucha", "categoria": "Campera De Gimnasia San Esteban", "talle": "16", "precio_efectivo": 72000}, {"codigo": "340", "descripcion": "Campera de gimnasia San Esteban con capucha", "categoria": "Campera De Gimnasia San Esteban", "talle": "1", "precio_efectivo": 76000}, {"codigo": "340", "descripcion": "Campera de gimnasia San Esteban con capucha", "categoria": "Campera De Gimnasia San Esteban", "talle": "2", "precio_efectivo": 80000}, {"codigo": "340", "descripcion": "Campera de gimnasia San Esteban con capucha", "categoria": "Campera De Gimnasia San Esteban", "talle": "3", "precio_efectivo": 84000}, {"codigo": "340", "descripcion": "Campera de gimnasia San Esteban con capucha", "categoria": "Campera De Gimnasia San Esteban", "talle": "4", "precio_efectivo": 88000}, {"codigo": "340", "descripcion": "Campera de gimnasia San Esteban con capucha", "categoria": "Campera De Gimnasia San Esteban", "talle": "5", "precio_efectivo": 98000}, {"codigo": "263", "descripcion": "Camisola de Jardin San Esteban", "categoria": "Camisola De Jardin San Esteban", "talle": "4", "precio_efectivo": 34000}, {"codigo": "263", "descripcion": "Camisola de Jardin San Esteban", "categoria": "Camisola De Jardin San Esteban", "talle": "5", "precio_efectivo": 37000}, {"codigo": "263", "descripcion": "Camisola de Jardin San Esteban", "categoria": "Camisola De Jardin San Esteban", "talle": "6", "precio_efectivo": 40000}, {"codigo": "263", "descripcion": "Camisola de Jardin San Esteban", "categoria": "Camisola De Jardin San Esteban", "talle": "7", "precio_efectivo": 43000}, {"codigo": "263", "descripcion": "Camisola de Jardin San Esteban", "categoria": "Camisola De Jardin San Esteban", "talle": "8", "precio_efectivo": 44000}, {"codigo": "382", "descripcion": "Campera de polar San Esteban", "categoria": "Campera De Polar San Esteban", "talle": "8", "precio_efectivo": 27000}, {"codigo": "382", "descripcion": "Campera de polar San Esteban", "categoria": "Campera De Polar San Esteban", "talle": "10", "precio_efectivo": 28000}, {"codigo": "382", "descripcion": "Campera de polar San Esteban", "categoria": "Campera De Polar San Esteban", "talle": "12", "precio_efectivo": 29000}, {"codigo": "382", "descripcion": "Campera de polar San Esteban", "categoria": "Campera De Polar San Esteban", "talle": "14", "precio_efectivo": 31000}, {"codigo": "382", "descripcion": "Campera de polar San Esteban", "categoria": "Campera De Polar San Esteban", "talle": "16", "precio_efectivo": 33000}, {"codigo": "382", "descripcion": "Campera de polar San Esteban", "categoria": "Campera De Polar San Esteban", "talle": "S", "precio_efectivo": 35000}, {"codigo": "382", "descripcion": "Campera de polar San Esteban", "categoria": "Campera De Polar San Esteban", "talle": "M", "precio_efectivo": 37000}, {"codigo": "382", "descripcion": "Campera de polar San Esteban", "categoria": "Campera De Polar San Esteban", "talle": "L", "precio_efectivo": 39000}, {"codigo": "382", "descripcion": "Campera de polar San Esteban", "categoria": "Campera De Polar San Esteban", "talle": "XL", "precio_efectivo": 42000}, {"codigo": "382", "descripcion": "Campera de polar San Esteban", "categoria": "Campera De Polar San Esteban", "talle": "XXL", "precio_efectivo": 46000}, {"codigo": "503", "descripcion": "Pullover San Esteban", "categoria": "Pullover San Esteban", "talle": "8", "precio_efectivo": 45000}, {"codigo": "503", "descripcion": "Pullover San Esteban", "categoria": "Pullover San Esteban", "talle": "10", "precio_efectivo": 47000}, {"codigo": "503", "descripcion": "Pullover San Esteban", "categoria": "Pullover San Esteban", "talle": "12", "precio_efectivo": 49000}, {"codigo": "503", "descripcion": "Pullover San Esteban", "categoria": "Pullover San Esteban", "talle": "14", "precio_efectivo": 52000}, {"codigo": "503", "descripcion": "Pullover San Esteban", "categoria": "Pullover San Esteban", "talle": "16", "precio_efectivo": 55000}, {"codigo": "503", "descripcion": "Pullover San Esteban", "categoria": "Pullover San Esteban", "talle": "18-50", "precio_efectivo": 59000}, {"codigo": "503", "descripcion": "Pullover San Esteban", "categoria": "Pullover San Esteban", "talle": "52-54", "precio_efectivo": 62000}, {"codigo": "503", "descripcion": "Pullover San Esteban", "categoria": "Pullover San Esteban", "talle": "56-60", "precio_efectivo": 68000}, {"codigo": "503", "descripcion": "Pullover San Esteban", "categoria": "Pullover San Esteban", "talle": "62-64", "precio_efectivo": 74000}, {"codigo": "350", "descripcion": "Pollera San Esteban", "categoria": "Pollera Escocesa San Esteban", "talle": "8", "precio_efectivo": 39000}, {"codigo": "350", "descripcion": "Pollera San Esteban", "categoria": "Pollera Escocesa San Esteban", "talle": "10", "precio_efectivo": 42000}, {"codigo": "350", "descripcion": "Pollera San Esteban", "categoria": "Pollera Escocesa San Esteban", "talle": "12", "precio_efectivo": 45000}, {"codigo": "350", "descripcion": "Pollera San Esteban", "categoria": "Pollera Escocesa San Esteban", "talle": "14", "precio_efectivo": 48000}, {"codigo": "350", "descripcion": "Pollera San Esteban", "categoria": "Pollera Escocesa San Esteban", "talle": "16", "precio_efectivo": 51000}, {"codigo": "350", "descripcion": "Pollera San Esteban", "categoria": "Pollera Escocesa San Esteban", "talle": "18", "precio_efectivo": 54000}, {"codigo": "350", "descripcion": "Pollera San Esteban", "categoria": "Pollera Escocesa San Esteban", "talle": "20", "precio_efectivo": 57000}, {"codigo": "350", "descripcion": "Pollera San Esteban", "categoria": "Pollera Escocesa San Esteban", "talle": "22", "precio_efectivo": 60000}, {"codigo": "350", "descripcion": "Pollera San Esteban", "categoria": "Pollera Escocesa San Esteban", "talle": "42", "precio_efectivo": 64000}, {"codigo": "350", "descripcion": "Pollera San Esteban", "categoria": "Pollera Escocesa San Esteban", "talle": "44", "precio_efectivo": 69000}, {"codigo": "353", "descripcion": "Chomba San Esteban manga corta", "categoria": "Chomba San Esteban Manga Corta", "talle": "8", "precio_efectivo": 35000}, {"codigo": "353", "descripcion": "Chomba San Esteban manga corta", "categoria": "Chomba San Esteban Manga Corta", "talle": "10", "precio_efectivo": 37000}, {"codigo": "353", "descripcion": "Chomba San Esteban manga corta", "categoria": "Chomba San Esteban Manga Corta", "talle": "12", "precio_efectivo": 39000}, {"codigo": "353", "descripcion": "Chomba San Esteban manga corta", "categoria": "Chomba San Esteban Manga Corta", "talle": "14", "precio_efectivo": 42000}, {"codigo": "353", "descripcion": "Chomba San Esteban manga corta", "categoria": "Chomba San Esteban Manga Corta", "talle": "16", "precio_efectivo": 44000}, {"codigo": "353", "descripcion": "Chomba San Esteban manga corta", "categoria": "Chomba San Esteban Manga Corta", "talle": "38", "precio_efectivo": 46000}, {"codigo": "353", "descripcion": "Chomba San Esteban manga corta", "categoria": "Chomba San Esteban Manga Corta", "talle": "40", "precio_efectivo": 48000}, {"codigo": "353", "descripcion": "Chomba San Esteban manga corta", "categoria": "Chomba San Esteban Manga Corta", "talle": "42", "precio_efectivo": 50000}, {"codigo": "353", "descripcion": "Chomba San Esteban manga corta", "categoria": "Chomba San Esteban Manga Corta", "talle": "44", "precio_efectivo": 52000}, {"codigo": "353", "descripcion": "Chomba San Esteban manga corta", "categoria": "Chomba San Esteban Manga Corta", "talle": "46", "precio_efectivo": 56000}, {"codigo": "353", "descripcion": "Chomba San Esteban manga corta", "categoria": "Chomba San Esteban Manga Corta", "talle": "48", "precio_efectivo": 58000}, {"codigo": "353", "descripcion": "Chomba San Esteban manga corta", "categoria": "Chomba San Esteban Manga Corta", "talle": "50", "precio_efectivo": 60000}, {"codigo": "354", "descripcion": "Chomba San Esteban manga larga", "categoria": "Chomba San Esteban Manga Larga", "talle": "8", "precio_efectivo": 37000}, {"codigo": "354", "descripcion": "Chomba San Esteban manga larga", "categoria": "Chomba San Esteban Manga Larga", "talle": "10", "precio_efectivo": 39000}, {"codigo": "354", "descripcion": "Chomba San Esteban manga larga", "categoria": "Chomba San Esteban Manga Larga", "talle": "12", "precio_efectivo": 41000}, {"codigo": "354", "descripcion": "Chomba San Esteban manga larga", "categoria": "Chomba San Esteban Manga Larga", "talle": "14", "precio_efectivo": 44000}, {"codigo": "354", "descripcion": "Chomba San Esteban manga larga", "categoria": "Chomba San Esteban Manga Larga", "talle": "16", "precio_efectivo": 46000}, {"codigo": "354", "descripcion": "Chomba San Esteban manga larga", "categoria": "Chomba San Esteban Manga Larga", "talle": "38", "precio_efectivo": 48000}, {"codigo": "354", "descripcion": "Chomba San Esteban manga larga", "categoria": "Chomba San Esteban Manga Larga", "talle": "40", "precio_efectivo": 50000}, {"codigo": "354", "descripcion": "Chomba San Esteban manga larga", "categoria": "Chomba San Esteban Manga Larga", "talle": "42", "precio_efectivo": 52000}, {"codigo": "354", "descripcion": "Chomba San Esteban manga larga", "categoria": "Chomba San Esteban Manga Larga", "talle": "44", "precio_efectivo": 54000}, {"codigo": "354", "descripcion": "Chomba San Esteban manga larga", "categoria": "Chomba San Esteban Manga Larga", "talle": "46", "precio_efectivo": 56000}, {"codigo": "354", "descripcion": "Chomba San Esteban manga larga", "categoria": "Chomba San Esteban Manga Larga", "talle": "48", "precio_efectivo": 60000}, {"codigo": "553", "descripcion": "Remera de gimn. San Esteban color m/c", "categoria": "Remera De Gimnasia San Esteban", "talle": "6", "precio_efectivo": 27000}, {"codigo": "553", "descripcion": "Remera de gimn. San Esteban color m/c", "categoria": "Remera De Gimnasia San Esteban", "talle": "8", "precio_efectivo": 28000}, {"codigo": "553", "descripcion": "Remera de gimn. San Esteban color m/c", "categoria": "Remera De Gimnasia San Esteban", "talle": "10", "precio_efectivo": 29000}, {"codigo": "553", "descripcion": "Remera de gimn. San Esteban color m/c", "categoria": "Remera De Gimnasia San Esteban", "talle": "12", "precio_efectivo": 30000}, {"codigo": "553", "descripcion": "Remera de gimn. San Esteban color m/c", "categoria": "Remera De Gimnasia San Esteban", "talle": "14", "precio_efectivo": 32000}, {"codigo": "553", "descripcion": "Remera de gimn. San Esteban color m/c", "categoria": "Remera De Gimnasia San Esteban", "talle": "XS", "precio_efectivo": 34000}, {"codigo": "553", "descripcion": "Remera de gimn. San Esteban color m/c", "categoria": "Remera De Gimnasia San Esteban", "talle": "S", "precio_efectivo": 36000}, {"codigo": "553", "descripcion": "Remera de gimn. San Esteban color m/c", "categoria": "Remera De Gimnasia San Esteban", "talle": "M", "precio_efectivo": 38000}, {"codigo": "553", "descripcion": "Remera de gimn. San Esteban color m/c", "categoria": "Remera De Gimnasia San Esteban", "talle": "L", "precio_efectivo": 40000}, {"codigo": "553", "descripcion": "Remera de gimn. San Esteban color m/c", "categoria": "Remera De Gimnasia San Esteban", "talle": "XL", "precio_efectivo": 42000}, {"codigo": "553", "descripcion": "Remera de gimn. San Esteban color m/c", "categoria": "Remera De Gimnasia San Esteban", "talle": "XXL", "precio_efectivo": 46000}, {"codigo": "600", "descripcion": "Pantalón de gimnasia color FULL BACK", "categoria": "Pantalon De Gimnasia Full Back", "talle": "6", "precio_efectivo": 27000}, {"codigo": "600", "descripcion": "Pantalón de gimnasia color FULL BACK", "categoria": "Pantalon De Gimnasia Full Back", "talle": "8", "precio_efectivo": 28000}, {"codigo": "600", "descripcion": "Pantalón de gimnasia color FULL BACK", "categoria": "Pantalon De Gimnasia Full Back", "talle": "10", "precio_efectivo": 29000}, {"codigo": "600", "descripcion": "Pantalón de gimnasia color FULL BACK", "categoria": "Pantalon De Gimnasia Full Back", "talle": "12", "precio_efectivo": 30000}, {"codigo": "600", "descripcion": "Pantalón de gimnasia color FULL BACK", "categoria": "Pantalon De Gimnasia Full Back", "talle": "14", "precio_efectivo": 31000}, {"codigo": "600", "descripcion": "Pantalón de gimnasia color FULL BACK", "categoria": "Pantalon De Gimnasia Full Back", "talle": "16", "precio_efectivo": 33000}, {"codigo": "600", "descripcion": "Pantalón de gimnasia color FULL BACK", "categoria": "Pantalon De Gimnasia Full Back", "talle": "S", "precio_efectivo": 35000}, {"codigo": "600", "descripcion": "Pantalón de gimnasia color FULL BACK", "categoria": "Pantalon De Gimnasia Full Back", "talle": "M", "precio_efectivo": 37000}, {"codigo": "600", "descripcion": "Pantalón de gimnasia color FULL BACK", "categoria": "Pantalon De Gimnasia Full Back", "talle": "L", "precio_efectivo": 38000}, {"codigo": "600", "descripcion": "Pantalón de gimnasia color FULL BACK", "categoria": "Pantalon De Gimnasia Full Back", "talle": "XL", "precio_efectivo": 39000}, {"codigo": "600", "descripcion": "Pantalón de gimnasia color FULL BACK", "categoria": "Pantalon De Gimnasia Full Back", "talle": "2XL", "precio_efectivo": 43000}, {"codigo": "338", "descripcion": "Pantalón de gimnasia color Frisa invisible", "categoria": "Pantalon De Gimnasia Frisa Invisible", "talle": "6", "precio_efectivo": 32000}, {"codigo": "338", "descripcion": "Pantalón de gimnasia color Frisa invisible", "categoria": "Pantalon De Gimnasia Frisa Invisible", "talle": "8", "precio_efectivo": 33000}, {"codigo": "338", "descripcion": "Pantalón de gimnasia color Frisa invisible", "categoria": "Pantalon De Gimnasia Frisa Invisible", "talle": "10", "precio_efectivo": 34000}, {"codigo": "338", "descripcion": "Pantalón de gimnasia color Frisa invisible", "categoria": "Pantalon De Gimnasia Frisa Invisible", "talle": "12", "precio_efectivo": 35000}, {"codigo": "338", "descripcion": "Pantalón de gimnasia color Frisa invisible", "categoria": "Pantalon De Gimnasia Frisa Invisible", "talle": "14", "precio_efectivo": 37000}, {"codigo": "338", "descripcion": "Pantalón de gimnasia color Frisa invisible", "categoria": "Pantalon De Gimnasia Frisa Invisible", "talle": "16", "precio_efectivo": 39000}, {"codigo": "338", "descripcion": "Pantalón de gimnasia color Frisa invisible", "categoria": "Pantalon De Gimnasia Frisa Invisible", "talle": "1", "precio_efectivo": 41000}, {"codigo": "338", "descripcion": "Pantalón de gimnasia color Frisa invisible", "categoria": "Pantalon De Gimnasia Frisa Invisible", "talle": "2", "precio_efectivo": 43000}, {"codigo": "338", "descripcion": "Pantalón de gimnasia color Frisa invisible", "categoria": "Pantalon De Gimnasia Frisa Invisible", "talle": "3", "precio_efectivo": 45000}, {"codigo": "338", "descripcion": "Pantalón de gimnasia color Frisa invisible", "categoria": "Pantalon De Gimnasia Frisa Invisible", "talle": "4", "precio_efectivo": 47000}, {"codigo": "338", "descripcion": "Pantalón de gimnasia color Frisa invisible", "categoria": "Pantalon De Gimnasia Frisa Invisible", "talle": "5", "precio_efectivo": 50000}];
 
-// ── Estado ──
-let clientes = {}; // { id: { nombre, items: [{prod, cant}] } }
-let clienteActivo = null;
-let productoParaAgregar = null;
-let panelAbierto = false;
+let clientes={}, clienteActivo=null, productoParaAgregar=null, panelAbierto=false;
 let filtroTexto='', filtroTalle='', filtroCategoria='', acSeleccionado=-1;
 
-// ── Inicializar filtros ──
+// ── Filtros ──
 const ordenTalles=['1','2','3','4','5','6','7','8','10','12','14','16','18','20','22','24','38','40','42','44','46','48','50','52','54','56','XS','S','M','L','XL','XXL','XXXL','2XL','CH','MED','BAJO','UNI','Único'];
 const tallesSet=new Set(PRODUCTOS.map(p=>p.talle));
 const tallesSel=document.getElementById('filtro-talle');
@@ -349,16 +338,11 @@ inputBuscador.addEventListener('keydown',e=>{
   else if(e.key==='Escape')cerrarDropdown();
 });
 document.addEventListener('click',e=>{if(!e.target.closest('.search-group'))cerrarDropdown();});
-
 function cerrarDropdown(){dropdown.classList.remove('visible');acSeleccionado=-1;}
 function actualizarReset(){btnReset.classList.toggle('visible',!!(filtroTexto||filtroTalle||filtroCategoria));}
-
 btnReset.addEventListener('click',()=>{
-  inputBuscador.value='';filtroTexto='';
-  tallesSel.value='';filtroTalle='';
-  catSel.value='';filtroCategoria='';
-  btnReset.classList.remove('visible');
-  cerrarDropdown();renderTabla();inputBuscador.focus();
+  inputBuscador.value='';filtroTexto='';tallesSel.value='';filtroTalle='';catSel.value='';filtroCategoria='';
+  btnReset.classList.remove('visible');cerrarDropdown();renderTabla();inputBuscador.focus();
 });
 tallesSel.addEventListener('change',e=>{filtroTalle=e.target.value;actualizarReset();renderTabla();});
 
@@ -383,8 +367,9 @@ function resaltar(texto,q){
   if(!q)return texto;
   return texto.replace(new RegExp(`(${q.replace(/[.*+?^${}()|[\]\\]/g,'\\$&')})`,'gi'),'<mark>$1</mark>');
 }
-
 function formatPeso(n){return new Intl.NumberFormat('es-AR',{style:'currency',currency:'ARS',minimumFractionDigits:0,maximumFractionDigits:0}).format(n);}
+
+function precioConTG(base, tg){return tg ? Math.round(base*(1+RECARGO_TG)) : base;}
 
 // ── Render tabla ──
 function renderTabla(){
@@ -404,14 +389,13 @@ function renderTabla(){
     const lista=Math.round(p.precio_efectivo*(1+RECARGO));
     const talleHl=filtroTalle&&p.talle===filtroTalle?'highlight':'';
     const tr=document.createElement('tr');
-    const pid=encodeURIComponent(p.codigo+'|'+p.talle+'|'+p.descripcion.substring(0,20));
     tr.innerHTML=`
       <td class="td-codigo">${p.codigo}</td>
       <td class="td-desc">${q?resaltar(p.descripcion,q):p.descripcion}</td>
       <td class="td-cat">${p.categoria}</td>
       <td><span class="talle-pill ${talleHl}">${p.talle}</span></td>
       <td class="td-precio"><span class="precio-label">efectivo</span><span class="precio-efectivo">${formatPeso(p.precio_efectivo)}</span></td>
-      <td class="td-precio"><span class="precio-label">lista</span><span class="precio-lista">${formatPeso(lista)}</span></td>
+      <td class="td-precio"><span class="precio-label">de lista</span><span class="precio-lista">${formatPeso(lista)}</span></td>
       <td><button class="btn-agregar" onclick='abrirModal(${JSON.stringify(p)})'>+ Agregar</button></td>`;
     frag.appendChild(tr);
   });
@@ -420,42 +404,31 @@ function renderTabla(){
   document.getElementById('stats-count').innerHTML=`Mostrando <strong>${total}</strong> producto${total!==1?'s':''}${filtroTexto?` · "<strong>${filtroTexto}</strong>"`:''}${filtroTalle?` · talle <strong>${filtroTalle}</strong>`:''}`;
 }
 
-// ── PANEL ──
+// ── Panel ──
 function togglePanel(){
   panelAbierto=!panelAbierto;
   document.getElementById('panel').classList.toggle('open',panelAbierto);
   document.getElementById('main-col').classList.toggle('panel-open',panelAbierto);
 }
 
-// ── CLIENTES ──
 function nuevoCliente(){
   const nombre=prompt('Nombre del cliente (ej: "María", "Colegio San Martín"):');
   if(!nombre||!nombre.trim())return;
   const id='c'+Date.now();
   clientes[id]={nombre:nombre.trim(),items:[]};
   clienteActivo=id;
-  renderTabs();
-  renderPanelBody();
+  renderTabs();renderPanelBody();
   if(!panelAbierto)togglePanel();
 }
 
-function setClienteActivo(id){
-  clienteActivo=id;
-  renderTabs();
-  renderPanelBody();
-}
+function setClienteActivo(id){clienteActivo=id;renderTabs();renderPanelBody();}
 
 function cerrarCliente(id,e){
   e.stopPropagation();
   if(clientes[id].items.length>0&&!confirm(`¿Cerrar el carrito de "${clientes[id].nombre}"?`))return;
   delete clientes[id];
-  if(clienteActivo===id){
-    const ids=Object.keys(clientes);
-    clienteActivo=ids.length?ids[ids.length-1]:null;
-  }
-  renderTabs();
-  renderPanelBody();
-  actualizarBadge();
+  if(clienteActivo===id){const ids=Object.keys(clientes);clienteActivo=ids.length?ids[ids.length-1]:null;}
+  renderTabs();renderPanelBody();actualizarBadge();
 }
 
 function renderTabs(){
@@ -470,9 +443,7 @@ function renderTabs(){
     cont.appendChild(btn);
   });
   const btnNuevo=document.createElement('button');
-  btnNuevo.className='btn-nuevo-cliente';
-  btnNuevo.textContent='+ Cliente';
-  btnNuevo.onclick=nuevoCliente;
+  btnNuevo.className='btn-nuevo-cliente';btnNuevo.textContent='+ Cliente';btnNuevo.onclick=nuevoCliente;
   cont.appendChild(btnNuevo);
 }
 
@@ -481,24 +452,23 @@ function renderPanelBody(){
   const footer=document.getElementById('panel-footer');
   if(!clienteActivo||!clientes[clienteActivo]){
     body.innerHTML='<div class="panel-empty">Ningún carrito abierto.<br>Hacé clic en "+ Cliente" para empezar.</div>';
-    footer.style.display='none';
-    return;
+    footer.style.display='none';return;
   }
   const c=clientes[clienteActivo];
   if(!c.items.length){
-    body.innerHTML=`<div class="panel-empty">El carrito de <strong>${c.nombre}</strong> está vacío.<br>Agregá productos desde la tabla.</div>`;
-    footer.style.display='none';
-    return;
+    body.innerHTML=`<div class="panel-empty">El carrito de <strong>${c.nombre}</strong> está vacío.</div>`;
+    footer.style.display='none';return;
   }
   footer.style.display='block';
   const tipoPrecio=document.querySelector('input[name="tipo-precio"]:checked')?.value||'efectivo';
   let html='';
   c.items.forEach((item,idx)=>{
-    const precio=tipoPrecio==='lista'?Math.round(item.prod.precio_efectivo*(1+RECARGO)):item.prod.precio_efectivo;
+    const basePrice=tipoPrecio==='lista'?Math.round(item.prod.precio_efectivo*(1+RECARGO)):item.prod.precio_efectivo;
+    const precio=precioConTG(basePrice,item.talleGrande);
     const subtotal=precio*item.cant;
     html+=`<div class="carrito-item">
       <div class="item-info">
-        <div class="item-desc">${item.prod.descripcion}</div>
+        <div class="item-desc">${item.prod.descripcion}${item.talleGrande?'<span class="item-tg">T. Grande</span>':''}</div>
         <div class="item-meta">Cód: ${item.prod.codigo} · T. ${item.prod.talle}</div>
         <div class="item-controls">
           <button class="cant-btn" onclick="cambiarCant('${clienteActivo}',${idx},-1)">−</button>
@@ -515,160 +485,149 @@ function renderPanelBody(){
 }
 
 function actualizarTotal(){
-  const c=clientes[clienteActivo];
-  if(!c)return;
+  const c=clientes[clienteActivo];if(!c)return;
   const tipoPrecio=document.querySelector('input[name="tipo-precio"]:checked')?.value||'efectivo';
   const total=c.items.reduce((s,item)=>{
-    const precio=tipoPrecio==='lista'?Math.round(item.prod.precio_efectivo*(1+RECARGO)):item.prod.precio_efectivo;
-    return s+precio*item.cant;
+    const basePrice=tipoPrecio==='lista'?Math.round(item.prod.precio_efectivo*(1+RECARGO)):item.prod.precio_efectivo;
+    return s+precioConTG(basePrice,item.talleGrande)*item.cant;
   },0);
   const el=document.getElementById('panel-total-num');
   el.textContent=formatPeso(total);
   el.className='panel-total-num'+(tipoPrecio==='lista'?' lista':'');
 }
 
-document.querySelectorAll('input[name="tipo-precio"]').forEach(r=>r.addEventListener('change',()=>{renderPanelBody();}));
+document.querySelectorAll('input[name="tipo-precio"]').forEach(r=>r.addEventListener('change',renderPanelBody));
 
-function cambiarCant(cid,idx,delta){
-  clientes[cid].items[idx].cant=Math.max(1,clientes[cid].items[idx].cant+delta);
-  renderTabs();renderPanelBody();actualizarBadge();
-}
-
-function quitarItem(cid,idx){
-  clientes[cid].items.splice(idx,1);
-  renderTabs();renderPanelBody();actualizarBadge();
-}
-
+function cambiarCant(cid,idx,delta){clientes[cid].items[idx].cant=Math.max(1,clientes[cid].items[idx].cant+delta);renderTabs();renderPanelBody();actualizarBadge();}
+function quitarItem(cid,idx){clientes[cid].items.splice(idx,1);renderTabs();renderPanelBody();actualizarBadge();}
 function actualizarBadge(){
   const total=Object.values(clientes).reduce((s,c)=>s+c.items.reduce((ss,i)=>ss+i.cant,0),0);
   const badge=document.getElementById('badge-total');
-  badge.textContent=total;
-  badge.classList.toggle('visible',total>0);
+  badge.textContent=total;badge.classList.toggle('visible',total>0);
 }
-
 function limpiarCarrito(){
   if(!clienteActivo||!clientes[clienteActivo])return;
   if(!confirm(`¿Limpiar el carrito de "${clientes[clienteActivo].nombre}"?`))return;
-  clientes[clienteActivo].items=[];
-  renderTabs();renderPanelBody();actualizarBadge();
+  clientes[clienteActivo].items=[];renderTabs();renderPanelBody();actualizarBadge();
 }
 
-// ── MODAL ──
+// ── Modal ──
+const tgCheck=document.getElementById('tg-check');
+
+function actualizarModalPrecios(){
+  if(!productoParaAgregar)return;
+  const tg=tgCheck.checked;
+  const ef=precioConTG(productoParaAgregar.precio_efectivo,tg);
+  const li=precioConTG(Math.round(productoParaAgregar.precio_efectivo*(1+RECARGO)),tg);
+  document.getElementById('modal-precio-ef').textContent=formatPeso(ef);
+  document.getElementById('modal-precio-li').textContent=formatPeso(li);
+}
+
+tgCheck.addEventListener('change',actualizarModalPrecios);
+
 function abrirModal(prod){
   productoParaAgregar=prod;
-  const info=document.getElementById('modal-prod-info');
-  info.innerHTML=`<strong>${prod.descripcion}</strong>Código: ${prod.codigo} · Talle: ${prod.talle}<br>Efectivo: ${formatPeso(prod.precio_efectivo)} · Lista: ${formatPeso(Math.round(prod.precio_efectivo*(1+RECARGO)))}`;
+  tgCheck.checked=false;
+  const ef=prod.precio_efectivo;
+  const li=Math.round(prod.precio_efectivo*(1+RECARGO));
+  document.getElementById('modal-prod-info').innerHTML=`
+    <strong>${prod.descripcion}</strong>
+    Cód: ${prod.codigo} · Talle: ${prod.talle}
+    <div class="modal-precios">
+      <div class="modal-precio-item efectivo"><span>Efectivo</span><strong id="modal-precio-ef">${formatPeso(ef)}</strong></div>
+      <div class="modal-precio-item lista"><span>De lista</span><strong id="modal-precio-li">${formatPeso(li)}</strong></div>
+    </div>`;
   const sel=document.getElementById('modal-cliente');
   sel.innerHTML='';
   const ids=Object.keys(clientes);
-  if(!ids.length){
-    sel.innerHTML='<option value="">— Primero creá un cliente —</option>';
-  } else {
-    ids.forEach(id=>{const o=document.createElement('option');o.value=id;o.textContent=clientes[id].nombre;if(id===clienteActivo)o.selected=true;sel.appendChild(o);});
-  }
+  if(!ids.length){sel.innerHTML='<option value="">— Primero creá un cliente —</option>';}
+  else{ids.forEach(id=>{const o=document.createElement('option');o.value=id;o.textContent=clientes[id].nombre;if(id===clienteActivo)o.selected=true;sel.appendChild(o);});}
   document.getElementById('modal-cantidad').value=1;
   document.getElementById('modal-overlay').classList.add('visible');
   setTimeout(()=>document.getElementById('modal-cantidad').focus(),100);
 }
 
-function cerrarModal(){
-  document.getElementById('modal-overlay').classList.remove('visible');
-  productoParaAgregar=null;
-}
+function cerrarModal(){document.getElementById('modal-overlay').classList.remove('visible');productoParaAgregar=null;}
 
 function confirmarAgregar(){
   const cid=document.getElementById('modal-cliente').value;
   if(!cid){nuevoCliente();cerrarModal();return;}
   const cant=parseInt(document.getElementById('modal-cantidad').value)||1;
+  const tg=tgCheck.checked;
   const c=clientes[cid];
-  const existente=c.items.find(i=>i.prod.codigo===productoParaAgregar.codigo&&i.prod.talle===productoParaAgregar.talle);
+  const key=productoParaAgregar.codigo+'|'+productoParaAgregar.talle+'|'+(tg?'TG':'');
+  const existente=c.items.find(i=>i.key===key);
   if(existente){existente.cant+=cant;}
-  else{c.items.push({prod:productoParaAgregar,cant});}
+  else{c.items.push({key,prod:productoParaAgregar,cant,talleGrande:tg});}
   clienteActivo=cid;
-  cerrarModal();
-  renderTabs();renderPanelBody();actualizarBadge();
+  cerrarModal();renderTabs();renderPanelBody();actualizarBadge();
   if(!panelAbierto)togglePanel();
 }
 
 document.getElementById('modal-overlay').addEventListener('click',e=>{if(e.target===document.getElementById('modal-overlay'))cerrarModal();});
 document.getElementById('modal-cantidad').addEventListener('keydown',e=>{if(e.key==='Enter')confirmarAgregar();});
 
-// ── IMPRIMIR ──
+// ── Imprimir ──
 function imprimirPresupuesto(){
   const c=clientes[clienteActivo];
   if(!c||!c.items.length)return;
   const tipoPrecio=document.querySelector('input[name="tipo-precio"]:checked')?.value||'efectivo';
   const esLista=tipoPrecio==='lista';
   const total=c.items.reduce((s,item)=>{
-    const precio=esLista?Math.round(item.prod.precio_efectivo*(1+RECARGO)):item.prod.precio_efectivo;
-    return s+precio*item.cant;
+    const base=esLista?Math.round(item.prod.precio_efectivo*(1+RECARGO)):item.prod.precio_efectivo;
+    return s+precioConTG(base,item.talleGrande)*item.cant;
   },0);
   const filas=c.items.map(item=>{
-    const precio=esLista?Math.round(item.prod.precio_efectivo*(1+RECARGO)):item.prod.precio_efectivo;
+    const base=esLista?Math.round(item.prod.precio_efectivo*(1+RECARGO)):item.prod.precio_efectivo;
+    const precio=precioConTG(base,item.talleGrande);
     return `<tr>
       <td>${item.prod.codigo}</td>
-      <td>${item.prod.descripcion}</td>
+      <td>${item.prod.descripcion}${item.talleGrande?' <em>(T. Grande)</em>':''}</td>
       <td>${item.prod.talle}</td>
       <td style="text-align:center">${item.cant}</td>
       <td style="text-align:right">${formatPeso(precio)}</td>
       <td style="text-align:right">${formatPeso(precio*item.cant)}</td>
     </tr>`;
   }).join('');
-
   const fecha=new Date().toLocaleDateString('es-AR');
   const win=window.open('','_blank');
   win.document.write(`<!DOCTYPE html><html><head><meta charset="UTF-8">
   <title>Presupuesto - ${c.nombre}</title>
   <style>
     body{font-family:Arial,sans-serif;padding:32px;color:#222;max-width:750px;margin:0 auto}
-    .encabezado{display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:24px;padding-bottom:16px;border-bottom:2px solid #1C00FF}
-    .empresa h1{font-size:2rem;font-weight:900;color:#1C00FF;letter-spacing:-1px;margin:0}
-    .empresa p{color:#666;font-size:.85rem;margin:2px 0}
-    .pres-info{text-align:right;font-size:.85rem;color:#555}
-    .pres-info strong{display:block;font-size:1rem;color:#222;margin-bottom:4px}
-    .cliente-box{background:#f0f0ff;border-radius:8px;padding:12px 16px;margin-bottom:20px}
-    .cliente-box p{margin:0;font-size:.9rem}<br>.cliente-box strong{font-size:1rem}
+    .enc{display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:24px;padding-bottom:16px;border-bottom:2px solid #1C00FF}
+    h1{font-size:2rem;font-weight:900;color:#1C00FF;letter-spacing:-1px;margin:0}
+    .sub{color:#666;font-size:.85rem;margin:2px 0}
+    .info{text-align:right;font-size:.85rem;color:#555}
+    .info strong{display:block;font-size:1rem;color:#222;margin-bottom:4px}
+    .cli{background:#f0f0ff;border-radius:8px;padding:12px 16px;margin-bottom:16px;font-size:.9rem}
+    .cli strong{font-size:1rem;display:block}
+    .tipo{font-size:.8rem;color:#666;text-align:right;margin-bottom:8px}
     table{width:100%;border-collapse:collapse;margin-bottom:16px;font-size:.88rem}
-    thead th{background:#0a0a2e;color:white;padding:9px 12px;text-align:left;font-size:.75rem;letter-spacing:.06em;text-transform:uppercase}
-    thead th:nth-child(4),thead th:nth-child(5),thead th:nth-child(6){text-align:right}
+    thead th{background:#0a0a2e;color:white;padding:9px 12px;text-align:left;font-size:.72rem;letter-spacing:.06em;text-transform:uppercase}
+    thead th:nth-child(n+4){text-align:right}
     tbody tr:nth-child(even){background:#f8f8fc}
     tbody td{padding:8px 12px;border-bottom:1px solid #eee}
-    .total-row{display:flex;justify-content:flex-end;margin-top:8px}
-    .total-box{background:#0a0a2e;color:white;border-radius:8px;padding:12px 20px;text-align:right}
-    .total-box .label{font-size:.75rem;opacity:.7;letter-spacing:.06em;text-transform:uppercase}
-    .total-box .monto{font-size:1.5rem;font-weight:700}
-    .tipo-precio{font-size:.8rem;color:#666;text-align:right;margin-bottom:6px}
-    .footer{margin-top:32px;padding-top:16px;border-top:1px solid #ddd;font-size:.78rem;color:#888;text-align:center}
+    .tot-wrap{display:flex;justify-content:flex-end}
+    .tot{background:#0a0a2e;color:white;border-radius:8px;padding:12px 20px;text-align:right}
+    .tot .lbl{font-size:.72rem;opacity:.7;text-transform:uppercase;letter-spacing:.06em}
+    .tot .monto{font-size:1.5rem;font-weight:700}
+    .foot{margin-top:28px;padding-top:14px;border-top:1px solid #ddd;font-size:.75rem;color:#999;text-align:center}
     @media print{body{padding:16px}}
   </style></head><body>
-  <div class="encabezado">
-    <div class="empresa">
-      <h1>TACUL</h1>
-      <p>Indumentaria</p>
-      <p>Moreno 546 L.2</p>
-    </div>
-    <div class="pres-info">
-      <strong>PRESUPUESTO</strong>
-      Fecha: ${fecha}
-    </div>
+  <div class="enc">
+    <div><h1>TACUL</h1><p class="sub">Indumentaria</p><p class="sub">Moreno 546 L.2</p></div>
+    <div class="info"><strong>PRESUPUESTO</strong>Fecha: ${fecha}</div>
   </div>
-  <div class="cliente-box">
-    <p>Cliente:</p>
-    <strong>${c.nombre}</strong>
-  </div>
-  <p class="tipo-precio">Precios: <strong>${esLista?'Lista (tarjeta +15%)':'Efectivo'}</strong></p>
+  <div class="cli"><p>Cliente:</p><strong>${c.nombre}</strong></div>
+  <p class="tipo">Precio: <strong>${esLista?'De lista':'Efectivo'}</strong></p>
   <table>
-    <thead><tr><th>Código</th><th>Descripción</th><th>Talle</th><th style="text-align:right">Cant.</th><th style="text-align:right">Precio unit.</th><th style="text-align:right">Subtotal</th></tr></thead>
+    <thead><tr><th>Código</th><th>Descripción</th><th>Talle</th><th>Cant.</th><th>P. Unit.</th><th>Subtotal</th></tr></thead>
     <tbody>${filas}</tbody>
   </table>
-  <div class="total-row">
-    <div class="total-box">
-      <div class="label">Total</div>
-      <div class="monto">${formatPeso(total)}</div>
-    </div>
-  </div>
-  <div class="footer">Tacul Indumentaria · Moreno 546 L.2 · Presupuesto válido por 15 días</div>
-  <script>window.onload=()=>{window.print();}<\/script>
+  <div class="tot-wrap"><div class="tot"><div class="lbl">Total</div><div class="monto">${formatPeso(total)}</div></div></div>
+  <div class="foot">Tacul Indumentaria · Moreno 546 L.2 · Presupuesto válido por 15 días</div>
+  <script>window.onload=()=>window.print()<\/script>
   </body></html>`);
   win.document.close();
 }
