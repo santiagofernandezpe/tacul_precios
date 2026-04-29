@@ -126,8 +126,8 @@ tbody td{padding:9px 12px;font-size:.82rem;vertical-align:middle}
 .panel-footer{border-top:1px solid var(--borde);padding:14px}
 .precio-tipo{display:flex;gap:8px;margin-bottom:12px}
 .precio-tipo label{flex:1;display:flex;align-items:center;justify-content:center;gap:5px;border:1.5px solid var(--borde);border-radius:8px;padding:7px;cursor:pointer;font-size:.78rem;font-weight:500;color:var(--gris-med);transition:all .15s}
-.precio-tipo input[type=radio]{display:none}
-.precio-tipo label:has(input:checked){border-color:var(--azul);background:var(--azul-clar);color:var(--azul-osc);font-weight:600}
+.precio-tipo input[type=checkbox]{accent-color:var(--azul);width:14px;height:14px;cursor:pointer}
+.precio-tipo label:has(input:checked){border-color:var(--azul);background:var(--azul-clar);color:var(--azul-osc);font-weight:600}.precio-tipo label:has(input:not(:checked)){opacity:.65}
 .panel-total{display:flex;justify-content:space-between;align-items:baseline;margin-bottom:12px}
 .panel-total-label{font-size:.78rem;color:var(--gris-med)}
 .panel-total-num{font-size:1.3rem;font-weight:700;color:var(--azul-osc)}
@@ -262,8 +262,8 @@ tbody td{padding:9px 12px;font-size:.82rem;vertical-align:middle}
   </div>
   <div class="panel-footer" id="panel-footer" style="display:none">
     <div class="precio-tipo">
-      <label><input type="radio" name="tipo-precio" value="efectivo" checked><span>💵 Efectivo</span></label>
-      <label><input type="radio" name="tipo-precio" value="lista"><span>💳 De lista</span></label>
+      <label><input type="checkbox" id="check-efectivo" checked onchange="renderPanelBody()"><span>💵 Efectivo</span></label>
+      <label><input type="checkbox" id="check-lista" onchange="renderPanelBody()"><span>💳 De lista</span></label>
     </div>
     <div class="panel-total">
       <span class="panel-total-label">Total:</span>
@@ -460,7 +460,7 @@ function renderPanelBody(){
     footer.style.display='none';return;
   }
   footer.style.display='block';
-  const tipoPrecio=document.querySelector('input[name="tipo-precio"]:checked')?.value||'efectivo';
+  const mostrarEf=document.getElementById('check-efectivo')?.checked!==false;const tipoPrecio=mostrarEf?'efectivo':'lista';
   let html='';
   c.items.forEach((item,idx)=>{
     const basePrice=tipoPrecio==='lista'?Math.round(item.prod.precio_efectivo*(1+RECARGO)):item.prod.precio_efectivo;
@@ -468,7 +468,7 @@ function renderPanelBody(){
     const subtotal=precio*item.cant;
     html+=`<div class="carrito-item">
       <div class="item-info">
-        <div class="item-desc">${item.prod.descripcion}${item.talleGrande?'<span class="item-tg">T. Grande</span>':''}</div>
+        <div class="item-desc">${item.prod.descripcion}${item.talleGrande?'<span class="item-tg">Talle especial</span>':''}</div>
         <div class="item-meta">Cód: ${item.prod.codigo} · T. ${item.prod.talle}</div>
         <div class="item-controls">
           <button class="cant-btn" onclick="cambiarCant('${clienteActivo}',${idx},-1)">−</button>
@@ -486,7 +486,7 @@ function renderPanelBody(){
 
 function actualizarTotal(){
   const c=clientes[clienteActivo];if(!c)return;
-  const tipoPrecio=document.querySelector('input[name="tipo-precio"]:checked')?.value||'efectivo';
+  const mostrarEf=document.getElementById('check-efectivo')?.checked!==false;const tipoPrecio=mostrarEf?'efectivo':'lista';
   const total=c.items.reduce((s,item)=>{
     const basePrice=tipoPrecio==='lista'?Math.round(item.prod.precio_efectivo*(1+RECARGO)):item.prod.precio_efectivo;
     return s+precioConTG(basePrice,item.talleGrande)*item.cant;
@@ -571,30 +571,49 @@ document.getElementById('modal-cantidad').addEventListener('keydown',e=>{if(e.ke
 function imprimirPresupuesto(){
   const c=clientes[clienteActivo];
   if(!c||!c.items.length)return;
-  const tipoPrecio=document.querySelector('input[name="tipo-precio"]:checked')?.value||'efectivo';
-  const esLista=tipoPrecio==='lista';
-  const total=c.items.reduce((s,item)=>{
-    const base=esLista?Math.round(item.prod.precio_efectivo*(1+RECARGO)):item.prod.precio_efectivo;
-    return s+precioConTG(base,item.talleGrande)*item.cant;
-  },0);
+  const mostrarEf=document.getElementById('check-efectivo').checked;
+  const mostrarLi=document.getElementById('check-lista').checked;
+  if(!mostrarEf&&!mostrarLi){alert('Seleccioná al menos un tipo de precio.');return;}
+
+  // Columnas dinámicas según lo seleccionado
+  const ambos=mostrarEf&&mostrarLi;
+
+  // Totales
+  const totalEf=mostrarEf?c.items.reduce((s,item)=>s+precioConTG(item.prod.precio_efectivo,item.talleGrande)*item.cant,0):null;
+  const totalLi=mostrarLi?c.items.reduce((s,item)=>s+precioConTG(Math.round(item.prod.precio_efectivo*(1+RECARGO)),item.talleGrande)*item.cant,0):null;
+
+  const thPrecio=ambos
+    ?'<th style="text-align:right">Efectivo</th><th style="text-align:right">De lista</th>'
+    :(mostrarEf?'<th style="text-align:right">Precio</th>':'<th style="text-align:right">Precio</th>');
+
   const filas=c.items.map(item=>{
-    const base=esLista?Math.round(item.prod.precio_efectivo*(1+RECARGO)):item.prod.precio_efectivo;
-    const precio=precioConTG(base,item.talleGrande);
+    const ef=precioConTG(item.prod.precio_efectivo,item.talleGrande);
+    const li=precioConTG(Math.round(item.prod.precio_efectivo*(1+RECARGO)),item.talleGrande);
+    const celdas=ambos
+      ?`<td style="text-align:right">${formatPeso(ef*item.cant)}</td><td style="text-align:right;color:#c0392b">${formatPeso(li*item.cant)}</td>`
+      :(mostrarEf?`<td style="text-align:right">${formatPeso(ef*item.cant)}</td>`:`<td style="text-align:right;color:#c0392b">${formatPeso(li*item.cant)}</td>`);
     return `<tr>
       <td>${item.prod.codigo}</td>
-      <td>${item.prod.descripcion}${item.talleGrande?' <em>(T. Grande)</em>':''}</td>
+      <td>${item.prod.descripcion}${item.talleGrande?' <em style="font-size:.8em;color:#7a6a20">(Talle especial)</em>':''}</td>
       <td>${item.prod.talle}</td>
       <td style="text-align:center">${item.cant}</td>
-      <td style="text-align:right">${formatPeso(precio)}</td>
-      <td style="text-align:right">${formatPeso(precio*item.cant)}</td>
+      ${celdas}
     </tr>`;
   }).join('');
+
+  const totalesHtml=ambos?`
+    <div class="tot-wrap">
+      <div class="tot" style="background:#1a5c2a"><div class="lbl">Total efectivo</div><div class="monto">${formatPeso(totalEf)}</div></div>
+      <div class="tot" style="margin-left:10px"><div class="lbl">Total de lista</div><div class="monto">${formatPeso(totalLi)}</div></div>
+    </div>`
+    :`<div class="tot-wrap"><div class="tot" style="${mostrarLi?'':'background:#1a5c2a'}"><div class="lbl">Total</div><div class="monto">${formatPeso(mostrarEf?totalEf:totalLi)}</div></div></div>`;
+
   const fecha=new Date().toLocaleDateString('es-AR');
   const win=window.open('','_blank');
   win.document.write(`<!DOCTYPE html><html><head><meta charset="UTF-8">
   <title>Presupuesto - ${c.nombre}</title>
   <style>
-    body{font-family:Arial,sans-serif;padding:32px;color:#222;max-width:750px;margin:0 auto}
+    body{font-family:Arial,sans-serif;padding:32px;color:#222;max-width:800px;margin:0 auto}
     .enc{display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:24px;padding-bottom:16px;border-bottom:2px solid #1C00FF}
     h1{font-size:2rem;font-weight:900;color:#1C00FF;letter-spacing:-1px;margin:0}
     .sub{color:#666;font-size:.85rem;margin:2px 0}
@@ -602,16 +621,14 @@ function imprimirPresupuesto(){
     .info strong{display:block;font-size:1rem;color:#222;margin-bottom:4px}
     .cli{background:#f0f0ff;border-radius:8px;padding:12px 16px;margin-bottom:16px;font-size:.9rem}
     .cli strong{font-size:1rem;display:block}
-    .tipo{font-size:.8rem;color:#666;text-align:right;margin-bottom:8px}
-    table{width:100%;border-collapse:collapse;margin-bottom:16px;font-size:.88rem}
-    thead th{background:#0a0a2e;color:white;padding:9px 12px;text-align:left;font-size:.72rem;letter-spacing:.06em;text-transform:uppercase}
-    thead th:nth-child(n+4){text-align:right}
+    table{width:100%;border-collapse:collapse;margin-bottom:16px;font-size:.87rem}
+    thead th{background:#0a0a2e;color:white;padding:9px 12px;text-align:left;font-size:.7rem;letter-spacing:.06em;text-transform:uppercase}
     tbody tr:nth-child(even){background:#f8f8fc}
     tbody td{padding:8px 12px;border-bottom:1px solid #eee}
-    .tot-wrap{display:flex;justify-content:flex-end}
+    .tot-wrap{display:flex;justify-content:flex-end;gap:10px}
     .tot{background:#0a0a2e;color:white;border-radius:8px;padding:12px 20px;text-align:right}
-    .tot .lbl{font-size:.72rem;opacity:.7;text-transform:uppercase;letter-spacing:.06em}
-    .tot .monto{font-size:1.5rem;font-weight:700}
+    .tot .lbl{font-size:.7rem;opacity:.7;text-transform:uppercase;letter-spacing:.06em}
+    .tot .monto{font-size:1.4rem;font-weight:700}
     .foot{margin-top:28px;padding-top:14px;border-top:1px solid #ddd;font-size:.75rem;color:#999;text-align:center}
     @media print{body{padding:16px}}
   </style></head><body>
@@ -620,12 +637,11 @@ function imprimirPresupuesto(){
     <div class="info"><strong>PRESUPUESTO</strong>Fecha: ${fecha}</div>
   </div>
   <div class="cli"><p>Cliente:</p><strong>${c.nombre}</strong></div>
-  <p class="tipo">Precio: <strong>${esLista?'De lista':'Efectivo'}</strong></p>
   <table>
-    <thead><tr><th>Código</th><th>Descripción</th><th>Talle</th><th>Cant.</th><th>P. Unit.</th><th>Subtotal</th></tr></thead>
+    <thead><tr><th>Código</th><th>Descripción</th><th>Talle</th><th style="text-align:center">Cant.</th>${thPrecio}</tr></thead>
     <tbody>${filas}</tbody>
   </table>
-  <div class="tot-wrap"><div class="tot"><div class="lbl">Total</div><div class="monto">${formatPeso(total)}</div></div></div>
+  ${totalesHtml}
   <div class="foot">Tacul Indumentaria · Moreno 546 L.2 · Presupuesto válido por 15 días</div>
   <script>window.onload=()=>window.print()<\/script>
   </body></html>`);
