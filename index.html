@@ -304,6 +304,7 @@ tbody td{padding:9px 12px;font-size:.82rem;vertical-align:middle}
   </div>
 </div>
 
+<iframe id="print-frame" style="display:none"></iframe>
 <script>
 const RECARGO = 0.15;
 const RECARGO_TG = 0.10;
@@ -609,7 +610,9 @@ function imprimirPresupuesto(){
     :`<div class="tot-wrap"><div class="tot" style="${mostrarLi?'':'background:#1a5c2a'}"><div class="lbl">Total</div><div class="monto">${formatPeso(mostrarEf?totalEf:totalLi)}</div></div></div>`;
 
   const fecha=new Date().toLocaleDateString('es-AR');
-  const win=window.open('','_blank');
+  const frame=document.getElementById('print-frame');
+  const win=frame.contentWindow;
+  win.document.open();
   win.document.write(`<!DOCTYPE html><html><head><meta charset="UTF-8">
   <title>Presupuesto - ${c.nombre}</title>
   <style>
@@ -643,9 +646,15 @@ function imprimirPresupuesto(){
   </table>
   ${totalesHtml}
   <div class="foot">Tacul Indumentaria · Moreno 546 L.2 · Presupuesto válido por 15 días</div>
-  <script>window.onload=()=>window.print()<\/script>
+  <script>window.onload=()=>{window.focus();window.print();}<\/script>
   </body></html>`);
   win.document.close();
+  // Esperar a que cargue y luego imprimir sin bloquear
+  frame.onload = () => {
+    frame.contentWindow.focus();
+    frame.contentWindow.print();
+    frame.onload = null;
+  };
 }
 
 renderTabla();
